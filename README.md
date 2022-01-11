@@ -1,16 +1,11 @@
 # flutter_flashcards_portrait
 
-A new Flutter project.
+A simple Flash cards app
 
-## Getting Started
+## Preview
 
-This project is a starting point for a Flutter application.
+[Download the release APK to try out on your android phone](https://install.appcenter.ms/users/momenamiin/apps/flashcard_portrait/distribution_groups/public) 
 
-A few resources to get you started if this is your first Flutter project:
+or by scaning the following qr code 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![frame (6)](https://user-images.githubusercontent.com/18642838/149027742-92212f61-8fa1-414c-900c-ad8b91ec63a0.png)
