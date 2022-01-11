@@ -1,0 +1,19 @@
+{
+	"title" : "Google Analytics 4",
+	"lesson" : "Introduction",
+	"slides" : [
+	{
+		"First Side": "Was ist eine Google Analytics 4 Property?",
+		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
+	},
+	{
+		"First Side": "Was ist eine Google Analytics 4 Property?",
+		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
+	},
+	{
+		"First Side": "Was ist eine Google Analytics 4 Property?",
+		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
+	}
+
+]
+}
