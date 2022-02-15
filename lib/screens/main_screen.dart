@@ -6,10 +6,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 
-import 'state_managment/dark_mode_state_manager.dart';
-import 'state_managment/current_card_state_manager.dart';
-import 'slides/slide_zero.dart';
-import 'slides/slide_one.dart';
+import '../state_managment/dark_mode_state_manager.dart';
+import '../state_managment/current_card_state_manager.dart';
+import '../slides/slide_zero.dart';
+import '../slides/slide_one.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   const MainScreen({Key? key}) : super(key: key);

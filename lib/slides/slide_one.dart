@@ -1,10 +1,11 @@
 import 'package:flip_card/flip_card.dart';
 import 'package:flip_card/flip_card_controller.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-//import '../state_managment/current_card_state_manager.dart';
+import '../screens/see_more.dart';
 
 class SlideOne extends ConsumerStatefulWidget {
   final String firstSide;
@@ -54,17 +55,6 @@ class _SlideOneState extends ConsumerState<SlideOne> {
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // const Expanded(child: SizedBox()),
-                // Container(
-                //   decoration: BoxDecoration(
-                //       color: Colors.grey[300],
-                //       borderRadius: const BorderRadius.all(Radius.circular(5))),
-                //   padding:
-                //       const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                //   child: Text('$page/${widget.pages} Cards',
-                //       style: const TextStyle(color: Colors.teal)),
-                // ),
-
                 const Expanded(child: SizedBox()),
                 Container(
                   width: width * .8,
@@ -102,14 +92,45 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Center(
-                          child: Text(widget.secondSide,
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.robotoCondensed(
-                                  textStyle: TextStyle(
-                                height: 1.7,
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 19,
-                              )))),
+                          child: widget.secondSide.length > 100
+                              ? RichText(
+                                  text: TextSpan(
+                                      text: widget.secondSide.substring(0, 100),
+                                      style: GoogleFonts.robotoCondensed(
+                                          textStyle: TextStyle(
+                                        height: 1.7,
+                                        color: Theme.of(context).primaryColor,
+                                        fontSize: 19,
+                                      )),
+                                      children: [
+                                        TextSpan(
+                                          text: " ... read more",
+                                          style: GoogleFonts.robotoCondensed(
+                                              textStyle: const TextStyle(
+                                            height: 1.7,
+                                            color: Colors.blue,
+                                            fontSize: 19,
+                                          )),
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () => Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                      builder: (context) =>
+                                                          SeeMore(
+                                                              text: widget
+                                                                  .secondSide)),
+                                                ),
+                                        ),
+                                      ]),
+                                )
+                              : Text(widget.secondSide,
+                                  textAlign: TextAlign.center,
+                                  style: GoogleFonts.robotoCondensed(
+                                      textStyle: TextStyle(
+                                    height: 1.7,
+                                    color: Theme.of(context).primaryColor,
+                                    fontSize: 19,
+                                  )))),
                     ),
                   ),
                 ),

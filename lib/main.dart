@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'main_screen.dart';
+import 'screens/main_screen.dart';
 import 'state_managment/dark_mode_state_manager.dart';
 
 void main() {
