@@ -98,7 +98,7 @@ class SlideZero extends StatelessWidget {
                       textStyle: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontWeight: FontWeight.w500,
-                    fontSize: 18,
+                    fontSize: 25,
                   ))),
               Icon(
                 Icons.keyboard_arrow_right_sharp,

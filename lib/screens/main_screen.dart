@@ -74,6 +74,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         list.add(SlideOne(
           firstSide: slide['First Side'],
           secondSide: slide['Second Side'],
+          learnMore: slide['Learn more'],
           nextPage: nextPage,
           previousPage: previousPage,
           pages: jsonResult.length,
@@ -85,6 +86,87 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        shape: const Border(top: BorderSide(color: Colors.green, width: 3)),
+        backgroundColor: Theme.of(context).cardColor,
+        centerTitle: false,
+        titleSpacing: 0,
+        shadowColor: Theme.of(context).shadowColor,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              height: 30,
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Image.asset('assets/images/LogoMaster.png'),
+            ),
+            const Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
+                  '$page',
+                  style: GoogleFonts.robotoCondensed(
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        color: Theme.of(context).primaryColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                Text(
+                  '/',
+                  style: GoogleFonts.robotoCondensed(
+                    textStyle: TextStyle(
+                      fontSize: 16,
+                      color: Theme.of(context).primaryColor,
+                    ),
+                  ),
+                ),
+                const SizedBox(
+                  width: 3,
+                ),
+                Text(
+                  '${list.length - 1}',
+                  style: GoogleFonts.robotoCondensed(
+                    textStyle: TextStyle(
+                        fontSize: 16,
+                        color: Theme.of(context).primaryColor.withOpacity(0.6)),
+                  ),
+                ),
+              ],
+            ),
+            const Spacer(),
+          ],
+        ),
+        actions: [
+          PopupMenuButton<String>(
+            child: Icon(
+              Icons.more_vert,
+              color: Theme.of(context).primaryColor,
+            ),
+            onSelected: (String value) => ref
+                .read(darkModeStateManagerProvider.notifier)
+                .switchDarkMode(),
+            itemBuilder: (BuildContext context) {
+              return {
+                Theme.of(context).brightness == Brightness.light
+                    ? 'enable dark mode'
+                    : 'disable dark mode'
+              }.map((String choice) {
+                return PopupMenuItem<String>(
+                  value: choice,
+                  child: Text(choice),
+                );
+              }).toList();
+            },
+          ),
+        ],
+      ),
       body: Column(
         children: [
           Expanded(
@@ -111,7 +193,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
             padding: const EdgeInsets.only(left: 20, right: 12),
             color: Colors.blue,
             width: double.infinity,
-            height: 40,
+            height: 45,
             child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,94 +214,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                             fontSize: 14,
                             fontWeight: FontWeight.w500)),
                   ),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        icon: const Icon(
-                          Icons.keyboard_arrow_left_sharp,
-                          color: Colors.white,
-                        ),
-                        iconSize: 30,
-                        onPressed: () {
-                          previousPage();
-                        },
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Text(
-                            '$page',
-                            style: GoogleFonts.robotoCondensed(
-                              textStyle: const TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.bold),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          Text(
-                            '/',
-                            style: GoogleFonts.robotoCondensed(
-                              textStyle: const TextStyle(
-                                fontSize: 12,
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 3,
-                          ),
-                          Text(
-                            '${list.length - 1}',
-                            style: GoogleFonts.robotoCondensed(
-                              textStyle: TextStyle(
-                                  fontSize: 12,
-                                  color: Colors.white.withOpacity(0.6)),
-                            ),
-                          ),
-                        ],
-                      ),
-                      IconButton(
-                        padding: EdgeInsets.zero,
-                        constraints: const BoxConstraints(),
-                        icon: const Icon(
-                          Icons.keyboard_arrow_right_sharp,
-                          color: Colors.white,
-                        ),
-                        iconSize: 30,
-                        onPressed: () {
-                          nextPage();
-                        },
-                      ),
-                      PopupMenuButton<String>(
-                        child: const Icon(
-                          Icons.more_vert,
-                          color: Colors.white,
-                        ),
-                        onSelected: (String value) => ref
-                            .read(darkModeStateManagerProvider.notifier)
-                            .switchDarkMode(),
-                        itemBuilder: (BuildContext context) {
-                          return {
-                            Theme.of(context).brightness == Brightness.light
-                                ? 'enable dark mode'
-                                : 'disable dark mode'
-                          }.map((String choice) {
-                            return PopupMenuItem<String>(
-                              value: choice,
-                              child: Text(choice),
-                            );
-                          }).toList();
-                        },
-                      ),
-                    ],
-                  )
                 ]),
           ),
         ],

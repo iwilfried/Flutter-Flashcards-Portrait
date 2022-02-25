@@ -36,7 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   auto_size_text: ^3.0.0
   google_fonts: ^2.1.0
-  flutter_riverpod: ^1.0.0
+  flutter_riverpod: ^1.0.3
   shared_preferences: ^2.0.9
   flip_card: ^0.6.0
 
@@ -67,6 +67,7 @@ flutter:
     - assets/images/view.png
     - assets/images/backPortrait.png
     - assets/images/backLandscape.png
+    - assets/images/LogoMaster.png
     - assets/slides.json
 
   # An image asset can refer to one or more resolution-specific "variants", see

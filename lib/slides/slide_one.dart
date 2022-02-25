@@ -10,6 +10,7 @@ import '../screens/see_more.dart';
 class SlideOne extends ConsumerStatefulWidget {
   final String firstSide;
   final String secondSide;
+  final String learnMore;
   final int pages;
   final Function nextPage;
   final Function previousPage;
@@ -17,6 +18,7 @@ class SlideOne extends ConsumerStatefulWidget {
     Key? key,
     required this.firstSide,
     required this.secondSide,
+    required this.learnMore,
     required this.pages,
     required this.nextPage,
     required this.previousPage,
@@ -92,69 +94,70 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Center(
-                          child: widget.secondSide.length > 100
-                              ? RichText(
-                                  text: TextSpan(
-                                      text: widget.secondSide.substring(0, 100),
-                                      style: GoogleFonts.robotoCondensed(
-                                          textStyle: TextStyle(
-                                        height: 1.7,
-                                        color: Theme.of(context).primaryColor,
-                                        fontSize: 19,
-                                      )),
-                                      children: [
-                                        TextSpan(
-                                          text: " ... read more",
-                                          style: GoogleFonts.robotoCondensed(
-                                              textStyle: const TextStyle(
-                                            height: 1.7,
-                                            color: Colors.blue,
-                                            fontSize: 19,
-                                          )),
-                                          recognizer: TapGestureRecognizer()
-                                            ..onTap = () => Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                      builder: (context) =>
-                                                          SeeMore(
-                                                              text: widget
-                                                                  .secondSide)),
-                                                ),
-                                        ),
-                                      ]),
-                                )
-                              : Text(widget.secondSide,
-                                  textAlign: TextAlign.center,
+                          child: Column(
+                        children: [
+                          Text(widget.secondSide,
+                              textAlign: TextAlign.start,
+                              style: GoogleFonts.robotoCondensed(
+                                  textStyle: TextStyle(
+                                height: 1.7,
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 19,
+                              ))),
+                          const Spacer(),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: [
+                              RichText(
+                                text: TextSpan(
+                                  text: "Learn more...",
                                   style: GoogleFonts.robotoCondensed(
-                                      textStyle: TextStyle(
+                                      textStyle: const TextStyle(
                                     height: 1.7,
-                                    color: Theme.of(context).primaryColor,
+                                    color: Colors.blue,
                                     fontSize: 19,
-                                  )))),
+                                  )),
+                                  recognizer: TapGestureRecognizer()
+                                    ..onTap = () => Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) => SeeMore(
+                                                  text: widget.learnMore)),
+                                        ),
+                                ),
+                              ),
+                            ],
+                          )
+                        ],
+                      )),
                     ),
                   ),
                 ),
                 const Expanded(child: SizedBox()),
+                const Divider(
+                  thickness: 2,
+                  height: 0,
+                ),
                 Container(
-                  width: width * .3,
+                  width: width,
                   decoration: const BoxDecoration(
                       color: Colors.transparent,
                       borderRadius: BorderRadius.all(Radius.circular(5))),
                   padding:
-                      const EdgeInsets.symmetric(horizontal: 10, vertical: 2),
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 1),
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       IconButton(
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        icon: Icon(
-                          Icons.keyboard_arrow_left_sharp,
-                          color: Theme.of(context).primaryColor,
+                        icon: const Icon(
+                          Icons.arrow_left,
+                          color: Colors.grey,
                         ),
-                        iconSize: 30,
+                        iconSize: 50,
                         onPressed: () {
                           widget.previousPage();
                         },
@@ -162,11 +165,11 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       IconButton(
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        icon: Icon(
-                          Icons.refresh,
-                          color: Theme.of(context).primaryColor,
+                        icon: const Icon(
+                          Icons.fiber_manual_record,
+                          color: Colors.grey,
                         ),
-                        iconSize: 25,
+                        iconSize: 27,
                         onPressed: () {
                           _controller.toggleCard();
                         },
@@ -174,11 +177,11 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       IconButton(
                         padding: EdgeInsets.zero,
                         constraints: const BoxConstraints(),
-                        icon: Icon(
-                          Icons.keyboard_arrow_right_sharp,
-                          color: Theme.of(context).primaryColor,
+                        icon: const Icon(
+                          Icons.arrow_right,
+                          color: Colors.grey,
                         ),
-                        iconSize: 30,
+                        iconSize: 50,
                         onPressed: () {
                           widget.nextPage();
                         },
@@ -186,7 +189,6 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                     ],
                   ),
                 ),
-                const Expanded(child: SizedBox()),
               ],
             )));
   }

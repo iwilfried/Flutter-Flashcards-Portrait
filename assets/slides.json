@@ -1,19 +1,21 @@
 {
-	"title" : "Google Analytics 4",
-	"lesson" : "Introduction",
-	"slides" : [
-	{
-		"First Side": "Was ist eine Google Analytics 4 Property?",
-		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
-	},
-	{
-		"First Side": "Was ist eine Google Analytics 4 Property?",
-		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
-	},
-	{
-		"First Side": "Was ist eine Google Analytics 4 Property?",
-		"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft."
-	}
-
-]
+	"title": "Google Analytics 4",
+	"lesson": "Introduction",
+	"slides": [
+		{
+			"First Side": "Was ist eine Google Analytics 4 Property?",
+			"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft.",
+			"Learn more": "Aufgrund der neuen Datenschutzerklärung von Google über die Zusammenführung der Daten der verschiedenen Dienste geht von Seiten, welche Google Analytics einsetzen, eine erhöhte Gefahr für das informationelle Selbstbestimmungsrecht des Nutzers aus.Die Erfassung von Datenspuren durch Google Analytics lässt sich verhindern, indem das Laden und Ausführen des Google-Analytics-Scripts (was auch den Seitenaufbau verlangsamen kann) verhindert wird. Dies geschieht beispielsweise durch das Blockieren von JavaScript (zum Beispiel durch die Firefox-Erweiterung NoScript, Ghostery oder durch Werbeblocker). Es ist auch möglich, den Zugriff auf die Google-Analytics-Domain google-analytics.com insgesamt zu sperren (zum Beispiel durch Werbeblocker, durch Aufnahme in eine Sperrliste, die viele Router anbieten, oder durch die Verwendung der hosts-Datei). Wer mit den Analyseverfahren des Dienstes nicht einverstanden ist, hat die Möglichkeit, sich mit dem seit 25. Mai 2010 veröffentlichten Google Analytics Opt-out, einem Browser-Add-on zu schützen. Es ist für Internet Explorer 8 bis 11, Google Chrome, Mozilla Firefox, Apple Safari und Opera verfügbar. Seit das Safe-Harbor-Abkommen vor dem EuGH aufgeweicht wurde, sollten die US-Konzerne wieder die für Europa verlangten Datenschutzbestimmungen einhalten. Die Betreiber von entsprechenden Webseiten sollten Datenschutzerklärungen anbieten, in denen auch auf das „Browser-Add-on zur Deaktivierung von Google Analytics“ hingewiesen wird. Diese findet man jedoch nur selten."
+		},
+		{
+			"First Side": "Was ist eine Google Analytics 4 Property?",
+			"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft.",
+			"Learn more": "Aufgrund der neuen Datenschutzerklärung von Google über die Zusammenführung der Daten der verschiedenen Dienste geht von Seiten, welche Google Analytics einsetzen, eine erhöhte Gefahr für das informationelle Selbstbestimmungsrecht des Nutzers aus.Die Erfassung von Datenspuren durch Google Analytics lässt sich verhindern, indem das Laden und Ausführen des Google-Analytics-Scripts (was auch den Seitenaufbau verlangsamen kann) verhindert wird. Dies geschieht beispielsweise durch das Blockieren von JavaScript (zum Beispiel durch die Firefox-Erweiterung NoScript, Ghostery oder durch Werbeblocker). Es ist auch möglich, den Zugriff auf die Google-Analytics-Domain google-analytics.com insgesamt zu sperren (zum Beispiel durch Werbeblocker, durch Aufnahme in eine Sperrliste, die viele Router anbieten, oder durch die Verwendung der hosts-Datei). Wer mit den Analyseverfahren des Dienstes nicht einverstanden ist, hat die Möglichkeit, sich mit dem seit 25. Mai 2010 veröffentlichten Google Analytics Opt-out, einem Browser-Add-on zu schützen. Es ist für Internet Explorer 8 bis 11, Google Chrome, Mozilla Firefox, Apple Safari und Opera verfügbar. Seit das Safe-Harbor-Abkommen vor dem EuGH aufgeweicht wurde, sollten die US-Konzerne wieder die für Europa verlangten Datenschutzbestimmungen einhalten. Die Betreiber von entsprechenden Webseiten sollten Datenschutzerklärungen anbieten, in denen auch auf das „Browser-Add-on zur Deaktivierung von Google Analytics“ hingewiesen wird. Diese findet man jedoch nur selten."
+		},
+		{
+			"First Side": "Was ist eine Google Analytics 4 Property?",
+			"Second Side": "Das neue Google Analytics 4 Property (ehemals App+Web Property) ist seit dem 14.10.2020 live. Daten Streams und die gesamte Property sind ab jetzt der Standard für jede neuangelegte Property in Google Analytics. Eins ist jedoch klar, Google Analytics 4 Property ist die Zukunft.",
+			"Learn more": "Aufgrund der neuen Datenschutzerklärung von Google über die Zusammenführung der Daten der verschiedenen Dienste geht von Seiten, welche Google Analytics einsetzen, eine erhöhte Gefahr für das informationelle Selbstbestimmungsrecht des Nutzers aus.Die Erfassung von Datenspuren durch Google Analytics lässt sich verhindern, indem das Laden und Ausführen des Google-Analytics-Scripts (was auch den Seitenaufbau verlangsamen kann) verhindert wird. Dies geschieht beispielsweise durch das Blockieren von JavaScript (zum Beispiel durch die Firefox-Erweiterung NoScript, Ghostery oder durch Werbeblocker). Es ist auch möglich, den Zugriff auf die Google-Analytics-Domain google-analytics.com insgesamt zu sperren (zum Beispiel durch Werbeblocker, durch Aufnahme in eine Sperrliste, die viele Router anbieten, oder durch die Verwendung der hosts-Datei). Wer mit den Analyseverfahren des Dienstes nicht einverstanden ist, hat die Möglichkeit, sich mit dem seit 25. Mai 2010 veröffentlichten Google Analytics Opt-out, einem Browser-Add-on zu schützen. Es ist für Internet Explorer 8 bis 11, Google Chrome, Mozilla Firefox, Apple Safari und Opera verfügbar. Seit das Safe-Harbor-Abkommen vor dem EuGH aufgeweicht wurde, sollten die US-Konzerne wieder die für Europa verlangten Datenschutzbestimmungen einhalten. Die Betreiber von entsprechenden Webseiten sollten Datenschutzerklärungen anbieten, in denen auch auf das „Browser-Add-on zur Deaktivierung von Google Analytics“ hingewiesen wird. Diese findet man jedoch nur selten."
+		}
+	]
 }
