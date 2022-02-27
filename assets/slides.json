@@ -8,12 +8,12 @@
 			"Learn more": "Mit Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden."
 		},
 		{
-			"First Side": "Was schreibt die DSGVO gesetzlich vor??",
+			"First Side": "Was schreibt die DSGVO gesetzlich vor?",
 			"Second Side": "Organisationen müssen technische und organisatorische Maßnahmen ergreifen, um kontinuierlich einen optimalen Datenschutz zu gewährleisten und dies durch eine entsprechende Dokumentation nachweisen können.",
 			"Learn more": "Die DSGVO legt die Rechtmäßigkeit von Verarbeitungsvorgängen fest, führt ein Verzeichnis der Verarbeitungstätigkeiten und garantiert die Rechte der betroffenen Personen. Sie setzt technische und organisatorische Maßnahmen um, die die Sicherheit der Daten und die Einhaltung der Grundsätze des Datenschutzes gewährleisten und regelt das Verhältnis zwischen Verarbeiter/Subunternehmer vertraglich durch einen Datenverarbeitungsvertrag. Sie schreibt auch die Benachrichtigung der Aufsichtsbehörde über Verletzungen von personenbezogenen Daten mit der Kontrolle des Datenortes und der Datenübermittlung sowie die Ernennung eines DSB vor, falls erforderlich."
 		},
 		{
-			"First Side": "Wie definiert die DSGVO „personenbezogene Daten“?",
+			"First Side": "Wie definiert die DSGVO „personen bezogene Daten“?",
 			"Second Side": "Gemeint sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen",
 			"Learn more": "„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (auch „betroffene Person“ genannt) beziehen. Eine „identifizierbare natürliche Person“ wird als natürliche Person definiert, die direkt oder indirekt identifiziert werden kann, insbesondere durch den Verweis auf einen Identifikator, wie einen Namen, Identifikationsnummer, Standortdaten, Online-Identifikationsnummer oder auf ein oder mehrere spezifische Elemente, die Ausdruck ihrer physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität sind."
 		}
