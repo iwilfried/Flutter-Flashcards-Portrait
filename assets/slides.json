@@ -13,9 +13,70 @@
 			"Learn more": "Die DSGVO legt die Rechtmäßigkeit von Verarbeitungsvorgängen fest, führt ein Verzeichnis der Verarbeitungstätigkeiten und garantiert die Rechte der betroffenen Personen. Sie setzt technische und organisatorische Maßnahmen um, die die Sicherheit der Daten und die Einhaltung der Grundsätze des Datenschutzes gewährleisten und regelt das Verhältnis zwischen Verarbeiter/Subunternehmer vertraglich durch einen Datenverarbeitungsvertrag. Sie schreibt auch die Benachrichtigung der Aufsichtsbehörde über Verletzungen von personenbezogenen Daten mit der Kontrolle des Datenortes und der Datenübermittlung sowie die Ernennung eines DSB vor, falls erforderlich."
 		},
 		{
-			"First Side": "Wie definiert die DSGVO „personen bezogene Daten“?",
+			"First Side": "Wie definiert die DSGVO „personen-bezogene Daten?",
 			"Second Side": "Gemeint sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen",
 			"Learn more": "„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (auch „betroffene Person“ genannt) beziehen. Eine „identifizierbare natürliche Person“ wird als natürliche Person definiert, die direkt oder indirekt identifiziert werden kann, insbesondere durch den Verweis auf einen Identifikator, wie einen Namen, Identifikationsnummer, Standortdaten, Online-Identifikationsnummer oder auf ein oder mehrere spezifische Elemente, die Ausdruck ihrer physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität sind."
+		},
+		{
+			"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
+			"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
+			"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
+		},
+		{
+			"First Side": "Was wird in der DSGVO als rechtmäßige Einwilligung betrachtet?",
+			"Second Side": "Eine eindeutige bestätigende Handlung, durch die die Person frei, in einer spezifischen und informierten Weise, ihre Zustimmung zur Datenverarbeitung ausdrückt.",
+			"Learn more": "Nach der DSGVO muss die Einwilligung durch eine eindeutige positive Handlung erfolgen, mit der die betroffene Person frei, konkret, informiert und unmissverständlich ihre Zustimmung zur Verarbeitung personenbezogener Daten zum Ausdruck bringt - zum Beispiel durch eine schriftliche Erklärung, auch auf elektronischem Wege, oder eine mündliche Erklärung. Dies könnte durch das Ankreuzen eines Kästchens beim Aufrufen einer Website, durch die Zustimmung zu bestimmten technischen Parametern für IT-Dienste oder durch eine andere Erklärung oder ein anderes Verhalten geschehen, aus dem klar hervorgeht, dass die betroffene Person mit der vorgeschlagenen Verarbeitung ihrer personenbezogenen Daten einverstanden ist. Bei Schweigen, nicht angekreuzten Kästchen oder Inaktivität kann daher keine Einwilligung vorliegen. Die erteilte Einwilligung gilt für alle Verarbeitungstätigkeiten mit demselben Zweck/denselben Zwecken. Dient die Verarbeitung mehreren Zwecken, muss die Einwilligung für alle Zwecke erteilt werden. Wenn die Einwilligung der betroffenen Person auf eine elektronische Anfrage hin erteilt wird, muss die Anfrage klar und prägnant sein und darf die Nutzung des Dienstes, für den sie erteilt wird, nicht unnötig stören."
+		},
+		{
+			"First Side": "Wie hoch ist die maximale Geldstrafe für die Nichteinhaltung der DSGVO?",
+			"Second Side": "20 Mio. (€) oder bis zu 4 % des weltweiten Jahresumsatzes.",
+			"Learn more": "Verstöße gegen die DSGVO können mit Geldbußen von bis zu 20 Millionen Euro oder bis zu 4 % des weltweiten Jahresumsatzes des vorangegangenen Geschäftsjahres geahndet werden, je nachdem, welcher Betrag höher ist. Bußgelder basieren auf einer Reihe von Faktoren, darunter: die Art des Verstoßes, die Absicht, die ergriffenen Maßnahmen zur Minderung des Schadens für die Betroffenen, die ergriffenen Präventivmaßnahmen, die Zusammenarbeit mit den Behörden und die Art der Daten."
+		},
+		{
+			"First Side": "Wie hoch ist die bisher höchste Geldstrafe, die wegen Nichteinhaltung der DSGVO verhängt wurde?",
+			"Second Side": "100 Millionen gegen Google im Dezember 2020.",
+			"Learn more": "Am 10. Dezember 2020 verhängte der Sonderausschuss der französischen Datenschutzbehörde CNIL auf der Grundlage der DSGVO eine globale Geldstrafe in Höhe von 100 Millionen Euro (€) gegen Google wegen des Platzierens von Cookies ohne die vorherige Zustimmung des Nutzers, des Versäumnisses, die Nutzer der Suchmaschine google.fr zu informieren, des teilweisen Versagens des „Widerspruchsmechanismus“ usw."
+		},
+		{
+			"First Side": "Muss ein für die Datenverarbeitung Verantwortlicher eine Datenschutzverletzung bei der französischen Datenschutzbehörde CNIL melden?",
+			"Second Side": "Ja, aber nur unter bestimmten Bedingungen.",
+			"Learn more": "Ein Verantwortlicher für die Datenverarbeitung muss eine Datenschutzverletzung so schnell wie möglich, spätestens jedoch innerhalb von 72 Stunden, an die CNIL melden, wenn alle folgenden Bedingungen erfüllt sind: - Sie haben die Verarbeitung von personenbezogenen Daten durchgeführt. - Diese Daten waren Gegenstand einer Verletzung: Verlust der Verfügbarkeit, Integrität oder Vertraulichkeit, versehentlich oder unrechtmäßig. - Dieser Vorfall stellt ein Risiko für die Privatsphäre der betroffenen Personen dar. Bitte beachten Sie, dass wenn der Vorfall ein hohes Risiko für die Privatsphäre der betroffenen Personen darstellt, sie den Vorfall auch den betroffenen Personen melden müssen."
+		},
+		{
+			"First Side": "Welche der folgenden Datenkategorien aus den von Ihrem Digital-Analytics-Anbieter gesammelten Daten werden als personenbezogen angesehen?",
+			"Second Side": "IP-Adressen, Cookies, Name der aufgerufenen Seite und Zeitpunkt des Seitenaufrufs.",
+			"Learn more": "Im Rahmen der Definitionen von Artikel 4 der DSGVO betrachten wir alle von uns gesammelten Daten als „personenbezogene Daten“, und als solche wenden wir die gleiche Aufmerksamkeit und das gleiche Schutzniveau auf sie an."
+		},
+		{
+			"First Side": "Wie lange sollten Daten für Digital-Analytics-Zwecke aufbewahrt werden?",
+			"Second Side": "Von Fall zu Fall von jeder Organisation zu definieren.",
+			"Learn more": "In Artikel 5 der DSGVO ist festgelegt, dass Daten „nicht länger aufbewahrt werden dürfen, als es für die Zwecke, für die sie verarbeitet werden, erforderlich ist“.  Es obliegt daher dem Verantwortlichen für die Datenverarbeitung, die Dauer der Datenspeicherung zu bestimmen und zu begründen. AT Internet wird für die effektive Umsetzung dieser Dauer in den Datenbanken Sorge tragen. Es ist zu beachten, dass die französische Gesetzgebung im Rahmen von Digital Analytics die Lebensdauer von Trackern wie Cookies auf 13 Monate festlegt, was also der maximalen Zeitspanne entspricht, während der dieselbe Person nach ihrer Einwilligung erkannt werden kann. AT Internet bietet alle Methoden, um dieser Verpflichtung Rechnung zu tragen. Eine 25-monatige Datenspeicherung ist die beste Praxis für Analytics-Zwecke."
+		},
+		{
+			"First Side": "Gibt es bei der Arbeit mit Digital Analytics Möglichkeiten, von der Notwendigkeit der Einholung einer Einwilligung befreit zu werden?",
+			"Second Side": " Ja, aber nur unter bestimmten Bedingungen.",
+			"Learn more": "In Bezug auf Audience Measurement Tracker befreit die CNIL unter ganz bestimmten Bedingungen von der Einholung einer Einwilligung. Diese Bedingungen müssen der Datenverantwortliche und der Datenverarbeiter beachten. Nur bestimmte Lösungen zur Publikumsmessung, die diese Spezifikationen erfüllen, sind davon betroffen. Seit 2014 bietet AT Internet Einstellungen an, um diese CNIL-Ausnahme nutzen zu können."
+		},
+		{
+			"First Side": "Wofür steht das Akronym DPO?",
+			"Second Side": "Data Protection Officer",
+			"Learn more": "Ein Data Protection Officer (deutsch Datenschutzbeauftragter (DSB)) ist eine Führungsrolle im Bereich der Unternehmenssicherheit, die durch die DSGVO gesetzlich vorgeschrieben ist. Datenschutzbeauftragte müssen für jede Organisation ernannt werden, die routinemäßig große Mengen personenbezogener Daten verarbeitet oder speichert, sei es für Mitarbeiter, Personen außerhalb der Organisation oder für beides. Der Datenschutzbeauftragte von AT Internet ist für die Überwachung der Datenschutzstrategie und -implementierung verantwortlich, um die Einhaltung der DSGVO-Anforderungen sicherzustellen."
+		},
+		{
+			"First Side": "Die DSGVO verpflichtet unter anderem dazu, Aufzeichnungen über die Verarbeitungstätigkeit zu führen. Was sollte dieses Dokument insbesondere enthalten?",
+			"Second Side": "Die Zwecke der Verarbeitung, eine Beschreibung der Kategorien von betroffenen Personen und der Kategorien von personenbezogenen Daten",
+			"Learn more": "Diese Punkte sind in Artikel 30 der DSGVO aufgeführt. Was die von AT Internet bereitgestellte Digital-Analytics-Lösung betrifft, so halten wir diese Dokumente gemäß den von der DSGVO geforderten Bedingungen auf dem neuesten Stand."
+		},
+		{
+			"First Side": "Was sollten Sie als Datenverantwortlicher von Ihrem Anbieter von Digital-Analytics-Lösungen erwarten?",
+			"Second Side": "Dass es einen vollständigen, klaren und verständlichen Auftragsverarbeitungsvertrag (AVV) gibt.",
+			"Learn more": "Der AVV von AT Internet legt die Verantwortlichkeiten jeder der Parteien klar dar und enthält alle Schlüsselelemente der DSGVO, um festzulegen, wie sie angewendet werden. AT Internet bietet einen vollständigen, klaren und verständlichen AVV, in dem es hervorhebt, wie: das Unternehmen den Anforderungen in Bezug auf Standort und Datentransfer, Umsetzung technischer und organisatorischer Maßnahmen zur Gewährleistung der Sicherheit Ihrer Daten und dem Privacy-by-Design-Ansatz Rechnung trägt; Ihnen das volle Eigentum an den in Ihrem Namen gesammelten Daten garantiert; die Technologie und Funktionalitäten zur Verfügung stellt und Sie unterstützt, um Ihre Compliance gemäß Ihren Anforderungen und der Gesetzgebung zu gewährleisten. Darüber hinaus ist unser Support-Team in diesen Fragen geschult und unterstützt unsere Kunden mit Beratung und spezifischen, dedizierten Tools."
+		},
+		{
+			"First Side": "Was ist Privacy-by-Design?",
+			"Second Side": "Ein Ansatz zur Integration des Datenschutzes in die Design- und Architekturspezifikationen neuer Systeme und Prozesse.",
+			"Learn more": "Privacy-by-Design ist ein in Artikel 25 der DSGVO festgelegter Grundsatz, der darauf abzielt, die Privatsphäre zu schützen, indem der Schutz personenbezogener Daten in die Designspezifikationen von Technologien, Geschäftspraktiken und physischen Infrastrukturen integriert wird. Dieser Ansatz minimiert die Risiken der Nichtkonformität der Datenverarbeitung mit der DSGVO durch die Implementierung präventiver Maßnahmen. Der „Privacy-by-Design“-Ansatz ermöglicht eine Win-Win-Beziehung, bei der der Schutz der Privatsphäre für besseres Vertrauen und bessere Geschäft sorgen kann. Lesen Sie dazu die Datenschutzrichtlinie von AT Internet"
 		}
+
 	]
 }
