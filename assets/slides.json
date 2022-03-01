@@ -3,21 +3,22 @@
 	"lesson": "Einführung",
 	"slides": [
 		{
-			"First Side": "Was ist die DSGVO?",
-			"Second Side": "Eine Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
-			"Learn more": "Mit Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden."
-		},
-		{
-			"First Side": "Was schreibt die DSGVO gesetzlich vor?",
-			"Second Side": "Organisationen müssen technische und organisatorische Maßnahmen ergreifen, um kontinuierlich einen optimalen Datenschutz zu gewährleisten und dies durch eine entsprechende Dokumentation nachweisen können.",
-			"Learn more": "Die DSGVO legt die Rechtmäßigkeit von Verarbeitungsvorgängen fest, führt ein Verzeichnis der Verarbeitungstätigkeiten und garantiert die Rechte der betroffenen Personen. Sie setzt technische und organisatorische Maßnahmen um, die die Sicherheit der Daten und die Einhaltung der Grundsätze des Datenschutzes gewährleisten und regelt das Verhältnis zwischen Verarbeiter/Subunternehmer vertraglich durch einen Datenverarbeitungsvertrag. Sie schreibt auch die Benachrichtigung der Aufsichtsbehörde über Verletzungen von personenbezogenen Daten mit der Kontrolle des Datenortes und der Datenübermittlung sowie die Ernennung eines DSB vor, falls erforderlich."
-		},
-		{
-			"First Side": "Wie definiert die DSGVO „personen-bezogene Daten?",
-			"Second Side": "Gemeint sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person beziehen",
-			"Learn more": "„Personenbezogene Daten“ sind alle Informationen, die sich auf eine identifizierte oder identifizierbare natürliche Person (auch „betroffene Person“ genannt) beziehen. Eine „identifizierbare natürliche Person“ wird als natürliche Person definiert, die direkt oder indirekt identifiziert werden kann, insbesondere durch den Verweis auf einen Identifikator, wie einen Namen, Identifikationsnummer, Standortdaten, Online-Identifikationsnummer oder auf ein oder mehrere spezifische Elemente, die Ausdruck ihrer physischen, physiologischen, genetischen, psychischen, wirtschaftlichen, kulturellen oder sozialen Identität sind."
-		},
-		{
+			"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
+			"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
+			"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden.",
+			"tags": [
+				{
+					"tag_name": "bold",
+					"fontWeight" : "bold",
+					"fontSize" : 42 
+				},
+				{
+					"tag_name": "red",
+					"fontWeight": "bold",
+					"color" : "FF0000"
+				}
+			]
+		},	{
 			"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
 			"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 			"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
@@ -77,6 +78,5 @@
 			"Second Side": "Ein Ansatz zur Integration des Datenschutzes in die Design- und Architekturspezifikationen neuer Systeme und Prozesse.",
 			"Learn more": "Privacy-by-Design ist ein in Artikel 25 der DSGVO festgelegter Grundsatz, der darauf abzielt, die Privatsphäre zu schützen, indem der Schutz personenbezogener Daten in die Designspezifikationen von Technologien, Geschäftspraktiken und physischen Infrastrukturen integriert wird. Dieser Ansatz minimiert die Risiken der Nichtkonformität der Datenverarbeitung mit der DSGVO durch die Implementierung präventiver Maßnahmen. Der „Privacy-by-Design“-Ansatz ermöglicht eine Win-Win-Beziehung, bei der der Schutz der Privatsphäre für besseres Vertrauen und bessere Geschäft sorgen kann. Lesen Sie dazu die Datenschutzrichtlinie von AT Internet"
 		}
-
 	]
 }

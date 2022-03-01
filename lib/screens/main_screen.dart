@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 
+import '../models/tags.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 import '../state_managment/current_card_state_manager.dart';
 import '../slides/slide_zero.dart';
@@ -75,6 +76,9 @@ class _MainScreenState extends ConsumerState<MainScreen> {
           firstSide: slide['First Side'],
           secondSide: slide['Second Side'],
           learnMore: slide['Learn more'],
+          tags: slide['tags'] == null
+              ? []
+              : List<Tags>.from(slide['tags'].map((e) => Tags.fromJson(e))),
           nextPage: nextPage,
           previousPage: previousPage,
           pages: jsonResult.length,

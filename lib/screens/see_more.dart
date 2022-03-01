@@ -2,10 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../state_managment/dark_mode_state_manager.dart';
+import 'package:styled_text/styled_text.dart';
 
 class SeeMore extends ConsumerWidget {
   final String text;
-  const SeeMore({Key? key, required this.text}) : super(key: key);
+  final Map<String, StyledTextTagBase> tags;
+  const SeeMore({Key? key, required this.text, required this.tags})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -45,17 +48,19 @@ class SeeMore extends ConsumerWidget {
         ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Text(
-              text,
-              style: GoogleFonts.robotoCondensed(
+              padding: const EdgeInsets.all(15.0),
+              child: StyledText(
+                text: text,
+                style: GoogleFonts.robotoCondensed(
                   textStyle: TextStyle(
-                height: 1.7,
-                color: Theme.of(context).primaryColor,
-                fontSize: 19,
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: 19,
+                    height: 1.7,
+                  ),
+                ),
+                tags: tags,
               )),
-            ),
-          ),
         ));
   }
 }

@@ -1,16 +1,20 @@
+import 'tags.dart';
+
 class Slide {
   String firstSide;
   int firstSlideFontSize;
   String secondSide;
   String learnMore;
   int secondSlideFontSize;
+  List<Tags> tags;
 
   Slide(
       {required this.firstSide,
       required this.firstSlideFontSize,
       required this.secondSide,
       required this.learnMore,
-      required this.secondSlideFontSize});
+      required this.secondSlideFontSize,
+      required this.tags});
 
   Map<String, dynamic> toJson() => {
         "firstSide": firstSide,
@@ -18,6 +22,7 @@ class Slide {
         "secondSide": secondSide,
         "learnMore": learnMore,
         "secondSlideFontSize": secondSlideFontSize,
+        "tags": tags.toString(),
       };
 
   Slide.fromJson(Map<String, dynamic> json)
@@ -25,5 +30,6 @@ class Slide {
         firstSlideFontSize = json['firstSlideFontSize'],
         secondSide = json['secondSide'],
         learnMore = json['learnMore'],
-        secondSlideFontSize = json["secondSlideFontSize"];
+        secondSlideFontSize = json["secondSlideFontSize"],
+        tags = List<Tags>.from(json['tags'].map((e) => Tags.fromJson(e)));
 }

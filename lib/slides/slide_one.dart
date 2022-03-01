@@ -4,8 +4,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:styled_text/styled_text.dart';
 
 import '../screens/see_more.dart';
+import '../models/tags.dart';
 
 class SlideOne extends ConsumerStatefulWidget {
   final String firstSide;
@@ -14,6 +16,7 @@ class SlideOne extends ConsumerStatefulWidget {
   final int pages;
   final Function nextPage;
   final Function previousPage;
+  final List<Tags> tags;
   const SlideOne({
     Key? key,
     required this.firstSide,
@@ -22,6 +25,7 @@ class SlideOne extends ConsumerStatefulWidget {
     required this.pages,
     required this.nextPage,
     required this.previousPage,
+    required this.tags,
   }) : super(key: key);
 
   @override
@@ -30,9 +34,27 @@ class SlideOne extends ConsumerStatefulWidget {
 
 class _SlideOneState extends ConsumerState<SlideOne> {
   late FlipCardController _controller;
+  Map<String, StyledTextTagBase> tags = Map();
 
   @override
   void initState() {
+    widget.tags.forEach((element) {
+      int color = int.parse("0xff" + element.color);
+      FontWeight fontWeight =
+          element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
+      setState(() {
+        tags.putIfAbsent(
+          element.tag,
+          () => StyledTextTag(
+            style: GoogleFonts.robotoCondensed(
+                textStyle: TextStyle(
+                    fontWeight: fontWeight,
+                    fontSize: (element.fontSize != 0) ? element.fontSize : null,
+                    color: (element.color != "") ? Color(color) : null)),
+          ),
+        );
+      });
+    });
     super.initState();
     _controller = FlipCardController();
   }
@@ -78,14 +100,17 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       ),
                       child: Center(
-                          child: Text(widget.firstSide,
-                              textAlign: TextAlign.center,
-                              style: GoogleFonts.robotoCondensed(
-                                  textStyle: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 36,
-                              )))),
+                          child: StyledText(
+                        text: widget.firstSide,
+                        style: GoogleFonts.robotoCondensed(
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.w400,
+                            fontSize: 36,
+                          ),
+                        ),
+                        tags: tags,
+                      )),
                     ),
                     back: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 10),
@@ -96,14 +121,18 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       child: Center(
                           child: Column(
                         children: [
-                          Text(widget.secondSide,
-                              textAlign: TextAlign.start,
-                              style: GoogleFonts.robotoCondensed(
-                                  textStyle: TextStyle(
-                                height: 1.7,
+                          StyledText(
+                            text: widget.secondSide,
+                            style: GoogleFonts.robotoCondensed(
+                              textStyle: TextStyle(
                                 color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.w400,
                                 fontSize: 19,
-                              ))),
+                                height: 1.7,
+                              ),
+                            ),
+                            tags: tags,
+                          ),
                           const Spacer(),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -122,6 +151,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) => SeeMore(
+                                                  tags: tags,
                                                   text: widget.learnMore)),
                                         ),
                                 ),
