@@ -14,7 +14,7 @@ class SlideZero extends StatelessWidget {
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.all(20),
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
         width: width,
         height: height,
         decoration: BoxDecoration(
@@ -27,7 +27,7 @@ class SlideZero extends StatelessWidget {
                     : "assets/images/backLandscape.png"),
                 fit: BoxFit.cover)),
         child: Padding(
-          padding: const EdgeInsets.symmetric(vertical: 30),
+          padding: const EdgeInsets.only(top: 30, bottom: 10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -69,7 +69,7 @@ class SlideZero extends StatelessWidget {
                         ),
                       ],
                     ),
-              const Expanded(child: SizedBox()),
+              const Spacer(),
               AutoSizeText(
                 title,
                 maxLines: 2,
@@ -80,30 +80,31 @@ class SlideZero extends StatelessWidget {
                   fontSize: 48,
                 )),
               ),
-              const Expanded(child: SizedBox()),
-            ],
-          ),
-        ),
-      ),
-      floatingActionButton: InkWell(
-        onTap: () => startLesson(),
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Text('Start',
-                  style: GoogleFonts.robotoSlab(
-                      textStyle: TextStyle(
-                    color: Theme.of(context).primaryColor,
-                    fontWeight: FontWeight.w500,
-                    fontSize: 25,
-                  ))),
-              Icon(
-                Icons.keyboard_arrow_right_sharp,
-                size: 30,
-                color: Theme.of(context).primaryColor,
+              const Spacer(),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        primary: const Color(0xffF16623),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(1.0)),
+                        padding: const EdgeInsets.all(12.0),
+                      ),
+                      onPressed: () => startLesson(),
+                      child: Text('Start Studying',
+                          style: GoogleFonts.robotoSlab(
+                              textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 18,
+                          ))),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

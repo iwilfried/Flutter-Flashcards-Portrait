@@ -101,6 +101,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       ),
                       child: Center(
                           child: StyledText(
+                        textAlign: TextAlign.center,
                         text: widget.firstSide,
                         style: GoogleFonts.robotoCondensed(
                           textStyle: TextStyle(

@@ -11,6 +11,7 @@ import '../state_managment/dark_mode_state_manager.dart';
 import '../state_managment/current_card_state_manager.dart';
 import '../slides/slide_zero.dart';
 import '../slides/slide_one.dart';
+import 'credential_screen.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -42,6 +43,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     loadData();
     list = [
       SlideZero(startLesson, title),
+      CredentialScreen(startLesson),
     ];
   }
 
@@ -71,6 +73,10 @@ class _MainScreenState extends ConsumerState<MainScreen> {
       lesson = jsonResult['lesson'];
       list = [];
       list.add(SlideZero(startLesson, title));
+      list.add(
+        CredentialScreen(startLesson),
+      );
+
       slidesJson.forEach((slide) {
         list.add(SlideOne(
           firstSide: slide['First Side'],
@@ -96,80 +102,98 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         centerTitle: false,
         titleSpacing: 0,
         shadowColor: Theme.of(context).shadowColor,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              height: 30,
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Image.asset('assets/images/LogoMaster.png'),
-            ),
-            const Spacer(),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  '$page',
-                  style: GoogleFonts.robotoCondensed(
-                    textStyle: TextStyle(
-                        fontSize: 16,
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.bold),
-                  ),
-                ),
-                const SizedBox(
-                  width: 3,
-                ),
-                Text(
-                  '/',
-                  style: GoogleFonts.robotoCondensed(
-                    textStyle: TextStyle(
-                      fontSize: 16,
-                      color: Theme.of(context).primaryColor,
+        title: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Expanded(
+                flex: 1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    SizedBox(
+                      height: 30,
+                      child: Image.asset('assets/images/LogoMaster.png'),
                     ),
-                  ),
+                  ],
                 ),
-                const SizedBox(
-                  width: 3,
+              ),
+              Expanded(
+                flex: 2,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      page > 0 ? '${page - 1}' : '$page',
+                      style: GoogleFonts.robotoCondensed(
+                        textStyle: TextStyle(
+                            fontSize: 16,
+                            color: Theme.of(context).primaryColor,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      '/',
+                      style: GoogleFonts.robotoCondensed(
+                        textStyle: TextStyle(
+                          fontSize: 16,
+                          color: Theme.of(context).primaryColor,
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 3,
+                    ),
+                    Text(
+                      '${list.length - 2}',
+                      style: GoogleFonts.robotoCondensed(
+                        textStyle: TextStyle(
+                            fontSize: 16,
+                            color: Theme.of(context)
+                                .primaryColor
+                                .withOpacity(0.6)),
+                      ),
+                    ),
+                  ],
                 ),
-                Text(
-                  '${list.length - 1}',
-                  style: GoogleFonts.robotoCondensed(
-                    textStyle: TextStyle(
-                        fontSize: 16,
-                        color: Theme.of(context).primaryColor.withOpacity(0.6)),
-                  ),
+              ),
+              Expanded(
+                flex: 1,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    PopupMenuButton<String>(
+                      child: Icon(
+                        Icons.more_vert,
+                        color: Theme.of(context).primaryColor,
+                      ),
+                      onSelected: (String value) => ref
+                          .read(darkModeStateManagerProvider.notifier)
+                          .switchDarkMode(),
+                      itemBuilder: (BuildContext context) {
+                        return {
+                          Theme.of(context).brightness == Brightness.light
+                              ? 'enable dark mode'
+                              : 'disable dark mode'
+                        }.map((String choice) {
+                          return PopupMenuItem<String>(
+                            value: choice,
+                            child: Text(choice),
+                          );
+                        }).toList();
+                      },
+                    ),
+                  ],
                 ),
-              ],
-            ),
-            const Spacer(),
-          ],
-        ),
-        actions: [
-          PopupMenuButton<String>(
-            child: Icon(
-              Icons.more_vert,
-              color: Theme.of(context).primaryColor,
-            ),
-            onSelected: (String value) => ref
-                .read(darkModeStateManagerProvider.notifier)
-                .switchDarkMode(),
-            itemBuilder: (BuildContext context) {
-              return {
-                Theme.of(context).brightness == Brightness.light
-                    ? 'enable dark mode'
-                    : 'disable dark mode'
-              }.map((String choice) {
-                return PopupMenuItem<String>(
-                  value: choice,
-                  child: Text(choice),
-                );
-              }).toList();
-            },
+              ),
+            ],
           ),
-        ],
+        ),
       ),
       body: Column(
         children: [
