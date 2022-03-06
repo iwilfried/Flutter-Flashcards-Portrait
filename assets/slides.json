@@ -3,7 +3,8 @@
 	"lesson": "Einführung",
 	"Categories" : [
 		{
-			"categoryName" : "First Category",
+			"categoryName" : "DSGVO / GDPR",
+			"FlashCardMaker": "AL",
 			"slides": [
 				{
 					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
@@ -85,6 +86,7 @@
 		},
 		{
 			"categoryName" : "second Category",
+			"FlashCardMaker" : "MO",
 			"slides": [
 				{
 					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",

@@ -10,7 +10,6 @@ import '../state_managment/current_card_state_manager.dart';
 import '../slides/slide_zero.dart';
 import '../slides/slide_one.dart';
 import 'categories_screen.dart';
-import 'credential_screen.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   final List<Slide> slides;
@@ -47,7 +46,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     ]);
     list = [
       SlideZero(startLesson, widget.title),
-      CredentialScreen(startLesson),
     ];
     loadData();
   }
@@ -114,7 +112,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Text(
-                      page > 0 ? '${page - 1}' : '$page',
+                      '$page',
                       style: GoogleFonts.robotoCondensed(
                         textStyle: TextStyle(
                             fontSize: 16,
@@ -138,7 +136,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       width: 3,
                     ),
                     Text(
-                      '${list.length - 2}',
+                      '${list.length - 1}',
                       style: GoogleFonts.robotoCondensed(
                         textStyle: TextStyle(
                             fontSize: 16,

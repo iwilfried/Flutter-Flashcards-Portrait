@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -40,6 +41,8 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool isPortrait =
+        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
         appBar: AppBar(
           shape: const Border(top: BorderSide(color: Colors.green, width: 3)),
@@ -106,49 +109,86 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
             ),
           ),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(5),
+        body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          decoration: BoxDecoration(
+              image: DecorationImage(
+                  colorFilter: ColorFilter.mode(
+                      Theme.of(context).backgroundColor.withOpacity(0.9),
+                      BlendMode.darken),
+                  image: AssetImage(isPortrait
+                      ? "assets/images/backPortrait.png"
+                      : "assets/images/backLandscape.png"),
+                  fit: BoxFit.cover)),
+          padding: const EdgeInsets.all(10),
           child: ListView.builder(
               itemCount: categories.length,
               itemBuilder: (context, index) {
                 return Card(
-                  child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            categories[index].categoryName,
-                            style: TextStyle(
-                                fontSize: 20,
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.normal),
+                  child: Container(
+                    height: 150,
+                    width: MediaQuery.of(context).size.width,
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: [
+                        AutoSizeText(
+                          categories[index].categoryName,
+                          maxLines: 1,
+                          style: GoogleFonts.oswald(
+                              textStyle: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 27,
+                          )),
+                        ),
+                        AutoSizeText(
+                          "Fashcard Maker: ${categories[index].flashCardMaker}",
+                          maxLines: 1,
+                          textAlign: TextAlign.start,
+                          style: GoogleFonts.oswald(
+                              textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 18,
+                          )),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 2),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  primary: const Color(0xffF16623),
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(1.0)),
+                                  padding: const EdgeInsets.all(5.0),
+                                ),
+                                onPressed: () => Navigator.pushReplacement(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => MainScreen(
+                                          title: title,
+                                          lesson: lesson,
+                                          slides: categories[index].slides)),
+                                ),
+                                child: Text('Start Studying',
+                                    style: GoogleFonts.robotoSlab(
+                                        textStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.w500,
+                                      fontSize: 12,
+                                    ))),
+                              ),
+                            ],
                           ),
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: const Color(0xffF16623),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20.0)),
-                              padding: const EdgeInsets.all(12.0),
-                            ),
-                            onPressed: () => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => MainScreen(
-                                      title: title,
-                                      lesson: lesson,
-                                      slides: categories[index].slides)),
-                            ),
-                            child: Text('Select',
-                                style: GoogleFonts.robotoSlab(
-                                    textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 15,
-                                ))),
-                          ),
-                        ],
-                      )),
+                        ),
+                      ],
+                    ),
+                  ),
                 );
               }),
         ));
