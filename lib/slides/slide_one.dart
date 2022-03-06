@@ -8,24 +8,19 @@ import 'package:styled_text/styled_text.dart';
 
 import '../screens/see_more.dart';
 import '../models/tags.dart';
+import '../models/slide.dart';
 
 class SlideOne extends ConsumerStatefulWidget {
-  final String firstSide;
-  final String secondSide;
-  final String learnMore;
+  final Slide slide;
   final int pages;
   final Function nextPage;
   final Function previousPage;
-  final List<Tags> tags;
   const SlideOne({
     Key? key,
-    required this.firstSide,
-    required this.secondSide,
-    required this.learnMore,
+    required this.slide,
     required this.pages,
     required this.nextPage,
     required this.previousPage,
-    required this.tags,
   }) : super(key: key);
 
   @override
@@ -38,7 +33,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
 
   @override
   void initState() {
-    widget.tags.forEach((element) {
+    widget.slide.tags.forEach((element) {
       int color = int.parse("0xff" + element.color);
       FontWeight fontWeight =
           element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
@@ -102,7 +97,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                       child: Center(
                           child: StyledText(
                         textAlign: TextAlign.center,
-                        text: widget.firstSide,
+                        text: widget.slide.firstSide,
                         style: GoogleFonts.robotoCondensed(
                           textStyle: TextStyle(
                             color: Theme.of(context).primaryColor,
@@ -123,7 +118,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                           child: Column(
                         children: [
                           StyledText(
-                            text: widget.secondSide,
+                            text: widget.slide.secondSide,
                             style: GoogleFonts.robotoCondensed(
                               textStyle: TextStyle(
                                 color: Theme.of(context).primaryColor,
@@ -153,7 +148,8 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                                           MaterialPageRoute(
                                               builder: (context) => SeeMore(
                                                   tags: tags,
-                                                  text: widget.learnMore)),
+                                                  text:
+                                                      widget.slide.learnMore)),
                                         ),
                                 ),
                               ),

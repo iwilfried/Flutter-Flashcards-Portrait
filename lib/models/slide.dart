@@ -20,8 +20,10 @@ class Slide {
       };
 
   Slide.fromJson(Map<String, dynamic> json)
-      : firstSide = json["firstSide"],
-        secondSide = json['secondSide'],
-        learnMore = json['learnMore'],
-        tags = List<Tags>.from(json['tags'].map((e) => Tags.fromJson(e)));
+      : firstSide = json["First Side"],
+        secondSide = json['Second Side'],
+        learnMore = json['Learn more'],
+        tags = json['tags'] == null
+            ? []
+            : List<Tags>.from(json['tags'].map((e) => Tags.fromJson(e)));
 }

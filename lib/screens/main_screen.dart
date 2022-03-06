@@ -1,20 +1,27 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_flashcards_portrait/models/slide.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 
-import '../models/tags.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 import '../state_managment/current_card_state_manager.dart';
 import '../slides/slide_zero.dart';
 import '../slides/slide_one.dart';
+import 'categories_screen.dart';
 import 'credential_screen.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  final List<Slide> slides;
+  final String title;
+  final String lesson;
+  const MainScreen(
+      {Key? key,
+      required this.slides,
+      required this.lesson,
+      required this.title})
+      : super(key: key);
 
   @override
   ConsumerState<MainScreen> createState() => _MainScreenState();
@@ -26,8 +33,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
         duration: const Duration(milliseconds: 3), curve: Curves.fastOutSlowIn);
   }
 
-  String title = "";
-  String lesson = "";
   int page = 0;
   List<Widget> list = [];
 
@@ -40,11 +45,11 @@ class _MainScreenState extends ConsumerState<MainScreen> {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    loadData();
     list = [
-      SlideZero(startLesson, title),
+      SlideZero(startLesson, widget.title),
       CredentialScreen(startLesson),
     ];
+    loadData();
   }
 
   void nextPage() {
@@ -64,30 +69,13 @@ class _MainScreenState extends ConsumerState<MainScreen> {
   }
 
   Future<void> loadData() async {
-    String data =
-        await DefaultAssetBundle.of(context).loadString("assets/slides.json");
-    final jsonResult = jsonDecode(data); //latest Dart
-    final slidesJson = jsonResult['slides'];
     setState(() {
-      title = jsonResult['title'];
-      lesson = jsonResult['lesson'];
-      list = [];
-      list.add(SlideZero(startLesson, title));
-      list.add(
-        CredentialScreen(startLesson),
-      );
-
-      slidesJson.forEach((slide) {
+      widget.slides.forEach((newslide) {
         list.add(SlideOne(
-          firstSide: slide['First Side'],
-          secondSide: slide['Second Side'],
-          learnMore: slide['Learn more'],
-          tags: slide['tags'] == null
-              ? []
-              : List<Tags>.from(slide['tags'].map((e) => Tags.fromJson(e))),
+          slide: newslide,
           nextPage: nextPage,
           previousPage: previousPage,
-          pages: jsonResult.length,
+          pages: widget.slides.length,
         ));
       });
     });
@@ -172,14 +160,22 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         Icons.more_vert,
                         color: Theme.of(context).primaryColor,
                       ),
-                      onSelected: (String value) => ref
-                          .read(darkModeStateManagerProvider.notifier)
-                          .switchDarkMode(),
+                      onSelected: (String value) => value == 'Categories'
+                          ? Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const CategoriesScreen()),
+                            )
+                          : ref
+                              .read(darkModeStateManagerProvider.notifier)
+                              .switchDarkMode(),
                       itemBuilder: (BuildContext context) {
                         return {
                           Theme.of(context).brightness == Brightness.light
                               ? 'enable dark mode'
-                              : 'disable dark mode'
+                              : 'disable dark mode, Categories',
+                          'Categories'
                         }.map((String choice) {
                           return PopupMenuItem<String>(
                             value: choice,
@@ -226,7 +222,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text(title,
+                  Text(widget.title,
                       style: GoogleFonts.robotoSlab(
                         textStyle: GoogleFonts.robotoSlab(
                             textStyle: const TextStyle(
@@ -235,7 +231,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                                 fontWeight: FontWeight.w500)),
                       )),
                   Text(
-                    lesson,
+                    widget.lesson,
                     style: GoogleFonts.robotoSlab(
                         textStyle: const TextStyle(
                             color: Colors.white,

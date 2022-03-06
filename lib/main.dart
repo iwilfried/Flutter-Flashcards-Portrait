@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'screens/main_screen.dart';
+import 'screens/categories_screen.dart';
 import 'state_managment/dark_mode_state_manager.dart';
 
 void main() {
@@ -39,6 +40,6 @@ class MyApp extends ConsumerWidget {
           /* dark theme settings */
         ),
         themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
-        home: const MainScreen());
+        home: const CategoriesScreen());
   }
 }
