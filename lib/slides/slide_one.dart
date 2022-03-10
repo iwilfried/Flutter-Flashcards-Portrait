@@ -7,18 +7,21 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
 
 import '../screens/see_more.dart';
-import '../models/tags.dart';
 import '../models/slide.dart';
 
 class SlideOne extends ConsumerStatefulWidget {
   final Slide slide;
+  final String categoryName;
   final int pages;
   final Function nextPage;
+  final Function flip;
   final Function previousPage;
   const SlideOne({
     Key? key,
     required this.slide,
+    required this.categoryName,
     required this.pages,
+    required this.flip,
     required this.nextPage,
     required this.previousPage,
   }) : super(key: key);
@@ -86,7 +89,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                     direction: FlipDirection.VERTICAL,
                     speed: 1000,
                     onFlipDone: (status) {
-                      //print(status);
+                      widget.flip();
                     },
                     front: Container(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -147,6 +150,8 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) => SeeMore(
+                                                  categoryName:
+                                                      widget.categoryName,
                                                   tags: tags,
                                                   text:
                                                       widget.slide.learnMore)),

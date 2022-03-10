@@ -1,81 +1,68 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_flashcards_portrait/models/slide.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/gestures.dart';
+import 'dart:convert';
+import 'dart:ui';
 
-import '../state_managment/dark_mode_state_manager.dart';
-import '../state_managment/current_card_state_manager.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_flashcards_portrait/screens/categories_screen.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+import '../models/category.dart';
 import '../slides/slide_zero.dart';
-import '../slides/slide_one.dart';
-import 'categories_screen.dart';
+import '../state_managment/dark_mode_state_manager.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
-  final List<Slide> slides;
-  final String title;
-  final String lesson;
-  const MainScreen(
-      {Key? key,
-      required this.slides,
-      required this.lesson,
-      required this.title})
-      : super(key: key);
+  const MainScreen({Key? key}) : super(key: key);
 
   @override
   ConsumerState<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends ConsumerState<MainScreen> {
+  int page = 0;
+  List<Widget> list = [];
+  List<Category> categories = [];
+  String title = "";
+  String lesson = "";
+
+  PageController pageControllerH = PageController();
+
   void startLesson() {
     pageControllerH.nextPage(
         duration: const Duration(milliseconds: 3), curve: Curves.fastOutSlowIn);
   }
 
-  int page = 0;
-  List<Widget> list = [];
-
-  PageController pageControllerH = PageController();
+  Future<void> loadData() async {
+    String data =
+        await DefaultAssetBundle.of(context).loadString("assets/slides.json");
+    final jsonResult = jsonDecode(data); //latest Dart
+    final catJson = jsonResult['Categories'];
+    setState(() {
+      title = jsonResult['title'];
+      lesson = jsonResult['lesson'];
+      categories =
+          List<Category>.from(catJson.map((e) => Category.fromJson(e)));
+      list = [
+        SlideZero(startLesson, title),
+        CategoriesScreen(categories: categories, title: title, lesson: lesson),
+      ];
+    });
+  }
 
   @override
   void initState() {
+    loadData();
     super.initState();
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    list = [
-      SlideZero(startLesson, widget.title),
-    ];
-    loadData();
-  }
-
-  void nextPage() {
-    if (page < list.length) {
-      pageControllerH.nextPage(
-          duration: const Duration(milliseconds: 3),
-          curve: Curves.fastOutSlowIn);
-    }
-  }
-
-  void previousPage() {
-    if (page > 0) {
-      pageControllerH.previousPage(
-          duration: const Duration(milliseconds: 3),
-          curve: Curves.fastOutSlowIn);
-    }
-  }
-
-  Future<void> loadData() async {
     setState(() {
-      widget.slides.forEach((newslide) {
-        list.add(SlideOne(
-          slide: newslide,
-          nextPage: nextPage,
-          previousPage: previousPage,
-          pages: widget.slides.length,
-        ));
-      });
+      list = [
+        SlideZero(startLesson, title),
+        CategoriesScreen(categories: categories, title: title, lesson: lesson),
+      ];
     });
   }
 
@@ -106,48 +93,17 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 ),
               ),
               Expanded(
-                flex: 2,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Text(
-                      '$page',
-                      style: GoogleFonts.robotoCondensed(
-                        textStyle: TextStyle(
-                            fontSize: 16,
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      '/',
-                      style: GoogleFonts.robotoCondensed(
-                        textStyle: TextStyle(
-                          fontSize: 16,
-                          color: Theme.of(context).primaryColor,
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 3,
-                    ),
-                    Text(
-                      '${list.length - 1}',
-                      style: GoogleFonts.robotoCondensed(
-                        textStyle: TextStyle(
-                            fontSize: 16,
-                            color: Theme.of(context)
-                                .primaryColor
-                                .withOpacity(0.6)),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+                  flex: 2,
+                  child: Center(
+                    child: AutoSizeText(
+                        page == 0 ? "Accelerated Learning" : "Select Category",
+                        maxLines: 1,
+                        style: GoogleFonts.roboto(
+                            textStyle: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 24,
+                                fontWeight: FontWeight.w300))),
+                  )),
               Expanded(
                 flex: 1,
                 child: Row(
@@ -158,22 +114,14 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         Icons.more_vert,
                         color: Theme.of(context).primaryColor,
                       ),
-                      onSelected: (String value) => value == 'Categories'
-                          ? Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const CategoriesScreen()),
-                            )
-                          : ref
-                              .read(darkModeStateManagerProvider.notifier)
-                              .switchDarkMode(),
+                      onSelected: (String value) => ref
+                          .read(darkModeStateManagerProvider.notifier)
+                          .switchDarkMode(),
                       itemBuilder: (BuildContext context) {
                         return {
                           Theme.of(context).brightness == Brightness.light
                               ? 'enable dark mode'
-                              : 'disable dark mode, Categories',
-                          'Categories'
+                              : 'disable dark mode'
                         }.map((String choice) {
                           return PopupMenuItem<String>(
                             value: choice,
@@ -197,9 +145,6 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                 setState(() {
                   page = newpage;
                 });
-                ref
-                    .read(currentPageStateManagerProvider.notifier)
-                    .changepage(page);
               },
               scrollDirection: Axis.horizontal,
               controller: pageControllerH,
@@ -212,31 +157,22 @@ class _MainScreenState extends ConsumerState<MainScreen> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 20, right: 12),
+            padding: const EdgeInsets.only(
+              left: 20,
+            ),
             color: Colors.blue,
             width: double.infinity,
             height: 45,
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(widget.title,
-                      style: GoogleFonts.robotoSlab(
-                        textStyle: GoogleFonts.robotoSlab(
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500)),
-                      )),
-                  Text(
-                    widget.lesson,
-                    style: GoogleFonts.robotoSlab(
+            child: Align(
+              alignment: Alignment.centerLeft,
+              child: AutoSizeText(title,
+                  maxLines: 1,
+                  style: GoogleFonts.robotoSlab(
+                    textStyle: GoogleFonts.robotoSlab(
                         textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500)),
-                  ),
-                ]),
+                            color: Colors.white, fontWeight: FontWeight.w500)),
+                  )),
+            ),
           ),
         ],
       ),

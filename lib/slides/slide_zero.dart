@@ -1,20 +1,21 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class SlideZero extends StatelessWidget {
+class SlideZero extends ConsumerWidget {
   final String title;
   final Function startLesson;
   const SlideZero(this.startLesson, this.title, {Key? key}) : super(key: key);
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
       body: Container(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 5),
+        padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 5),
         width: width,
         height: height,
         decoration: BoxDecoration(
@@ -27,7 +28,8 @@ class SlideZero extends StatelessWidget {
                     : "assets/images/backLandscape.png"),
                 fit: BoxFit.cover)),
         child: Padding(
-          padding: const EdgeInsets.only(top: 30, bottom: 10),
+          padding:
+              const EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -36,12 +38,12 @@ class SlideZero extends StatelessWidget {
                   ? Column(
                       children: [
                         Image.asset('assets/images/view.png',
-                            width: 80, height: 80),
+                            width: 40, height: 40),
                         const SizedBox(
                           height: 15,
                         ),
                         AutoSizeText(
-                          'Accelerated Learning',
+                          'WELCOME',
                           style: GoogleFonts.roboto(
                               textStyle: TextStyle(
                                   color: Theme.of(context).primaryColor,
@@ -55,12 +57,12 @@ class SlideZero extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Image.asset('assets/images/view.png',
-                            width: 80, height: 80),
+                            width: 40, height: 40),
                         const SizedBox(
                           width: 20,
                         ),
                         AutoSizeText(
-                          'Accelerated Learning',
+                          'WELCOME',
                           style: GoogleFonts.roboto(
                               textStyle: TextStyle(
                                   color: Theme.of(context).primaryColor,
@@ -71,40 +73,42 @@ class SlideZero extends StatelessWidget {
                     ),
               const Spacer(),
               AutoSizeText(
-                title,
-                maxLines: 2,
+                '$title FlashCards',
+                maxLines: 4,
                 textAlign: TextAlign.center,
                 style: GoogleFonts.oswald(
                     textStyle: TextStyle(
                   color: Theme.of(context).primaryColor,
-                  fontSize: 48,
+                  fontSize: 30,
                 )),
               ),
               const Spacer(),
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 15),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        primary: const Color(0xffF16623),
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(1.0)),
-                        padding: const EdgeInsets.all(12.0),
-                      ),
-                      onPressed: () => startLesson(),
-                      child: Text('Start Studying',
-                          style: GoogleFonts.robotoSlab(
-                              textStyle: const TextStyle(
-                            color: Colors.white,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 18,
-                          ))),
-                    ),
-                  ],
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+                child: AutoSizeText(
+                  'Use this flashcards to learn and understand vocabulary, terms and data protection regulations.',
+                  maxLines: 5,
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.oswald(
+                      textStyle: TextStyle(
+                    color: Theme.of(context).primaryColor,
+                    fontSize: 18,
+                  )),
                 ),
+              ),
+              const Spacer(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 10.0),
+                    child: IconButton(
+                        onPressed: () => startLesson(),
+                        icon: const Icon(Icons.arrow_forward_sharp,
+                            size: 40, color: Color(0xffF16623))),
+                  )
+                ],
               ),
             ],
           ),
