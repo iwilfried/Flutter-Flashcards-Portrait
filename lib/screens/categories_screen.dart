@@ -43,68 +43,87 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
           itemCount: widget.categories.length,
           itemBuilder: (context, index) {
             return Card(
-              child: Container(
-                height: 150,
-                width: MediaQuery.of(context).size.width,
-                padding: const EdgeInsets.all(20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: [
-                    AutoSizeText(
-                      widget.categories[index].categoryName,
-                      maxLines: 1,
-                      style: GoogleFonts.oswald(
-                          textStyle: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 27,
-                      )),
-                    ),
-                    AutoSizeText(
-                      "Fashcard Maker: ${widget.categories[index].flashCardMaker}",
-                      maxLines: 1,
-                      textAlign: TextAlign.start,
-                      style: GoogleFonts.oswald(
-                          textStyle: TextStyle(
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 18,
-                      )),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 2),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              primary: const Color(0xffF16623),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(1.0)),
-                              padding: const EdgeInsets.all(5.0),
-                            ),
-                            onPressed: () => Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => SlidesScreen(
-                                      slides: widget.categories[index].slides,
-                                      categoryName: widget
-                                          .categories[index].categoryName)),
-                            ),
-                            child: Text('Start Studying',
-                                style: GoogleFonts.robotoSlab(
-                                    textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w500,
-                                  fontSize: 12,
-                                ))),
-                          ),
-                        ],
+              child: ExpansionTile(
+                tilePadding: const EdgeInsets.all(20),
+                title: SizedBox(
+                  width: MediaQuery.of(context).size.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AutoSizeText(
+                        widget.categories[index].categoryName,
+                        maxLines: 1,
+                        style: GoogleFonts.oswald(
+                            textStyle: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 27,
+                        )),
                       ),
-                    ),
-                  ],
+                      AutoSizeText(
+                        "Fashcard Maker: ${widget.categories[index].flashCardMaker}",
+                        maxLines: 1,
+                        textAlign: TextAlign.start,
+                        style: GoogleFonts.oswald(
+                            textStyle: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 18,
+                        )),
+                      ),
+                    ],
+                  ),
                 ),
+                subtitle: Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 2),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: const Color(0xffF16623),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(1.0)),
+                          padding: const EdgeInsets.all(5.0),
+                        ),
+                        onPressed: () => Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => SlidesScreen(
+                                  slides: widget.categories[index].slides,
+                                  categoryName:
+                                      widget.categories[index].categoryName)),
+                        ),
+                        child: Text('Start Studying',
+                            style: GoogleFonts.robotoSlab(
+                                textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 12,
+                            ))),
+                      ),
+                    ],
+                  ),
+                ),
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          widget.categories[index].explanation,
+                          style: GoogleFonts.oswald(
+                              textStyle: TextStyle(
+                            fontWeight: FontWeight.normal,
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 15,
+                          )),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
               ),
             );
           }),
