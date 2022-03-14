@@ -92,9 +92,16 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 30,
-                      child: Image.asset('assets/images/LogoMaster.png'),
+                    InkWell(
+                      onTap: () => Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const MainScreen()),
+                      ),
+                      child: SizedBox(
+                        height: 30,
+                        child: Image.asset('assets/images/LogoMaster.png'),
+                      ),
                     ),
                   ],
                 ),
@@ -152,7 +159,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                         Icons.more_vert,
                         color: Theme.of(context).primaryColor,
                       ),
-                      onSelected: (String value) => value == 'Categories'
+                      onSelected: (String value) => value == 'FlashDecks'
                           ? Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
@@ -164,9 +171,9 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                       itemBuilder: (BuildContext context) {
                         return {
                           Theme.of(context).brightness == Brightness.light
-                              ? 'enable dark mode'
-                              : 'disable dark mode, Categories',
-                          'Categories'
+                              ? 'Dark mode'
+                              : 'Light mode, Categories',
+                          'FlashDecks'
                         }.map((String choice) {
                           return PopupMenuItem<String>(
                             value: choice,
@@ -205,31 +212,30 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(left: 20, right: 12),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             color: Colors.blue,
             width: double.infinity,
             height: 45,
-            child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(widget.categoryName,
-                      style: GoogleFonts.robotoSlab(
-                        textStyle: GoogleFonts.robotoSlab(
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500)),
-                      )),
-                  Text(isQuestion ? "Question" : "Answer",
-                      style: GoogleFonts.robotoSlab(
-                        textStyle: GoogleFonts.robotoSlab(
-                            textStyle: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 14,
-                                fontWeight: FontWeight.w500)),
-                      )),
-                ]),
+            child:
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              Text(widget.categoryName,
+                  style: GoogleFonts.robotoSlab(
+                    textStyle: GoogleFonts.robotoSlab(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500)),
+                  )),
+              const Spacer(),
+              Text(isQuestion ? "Question" : "Answer",
+                  style: GoogleFonts.robotoSlab(
+                    textStyle: GoogleFonts.robotoSlab(
+                        textStyle: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500)),
+                  )),
+            ]),
           ),
         ],
       ),

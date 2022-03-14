@@ -21,29 +21,32 @@ class CategoriesScreen extends ConsumerStatefulWidget {
 }
 
 class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
+  int selected = -1;
+
   @override
   Widget build(BuildContext context) {
-    bool isPortrait =
-        MediaQuery.of(context).orientation == Orientation.portrait;
     return Scaffold(
         body: Container(
-      width: MediaQuery.of(context).size.width,
-      height: MediaQuery.of(context).size.height,
-      decoration: BoxDecoration(
-          image: DecorationImage(
-              colorFilter: ColorFilter.mode(
-                  Theme.of(context).backgroundColor.withOpacity(0.9),
-                  BlendMode.darken),
-              image: AssetImage(isPortrait
-                  ? "assets/images/backPortrait.png"
-                  : "assets/images/backLandscape.png"),
-              fit: BoxFit.cover)),
       padding: const EdgeInsets.all(10),
       child: ListView.builder(
           itemCount: widget.categories.length,
           itemBuilder: (context, index) {
             return Card(
               child: ExpansionTile(
+                key: GlobalKey(),
+                initiallyExpanded: index == selected,
+                onExpansionChanged: ((newState) {
+                  if (newState) {
+                    setState(() {
+                      const Duration(seconds: 20000);
+                      selected = index;
+                    });
+                  } else {
+                    setState(() {
+                      selected = -1;
+                    });
+                  }
+                }),
                 tilePadding: const EdgeInsets.all(20),
                 title: SizedBox(
                   width: MediaQuery.of(context).size.width,

@@ -96,7 +96,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                   flex: 2,
                   child: Center(
                     child: AutoSizeText(
-                        page == 0 ? "Accelerated Learning" : "Select Category",
+                        page == 0 ? "Accelerated Learning" : "FlashDecks",
                         maxLines: 1,
                         style: GoogleFonts.roboto(
                             textStyle: TextStyle(
@@ -120,8 +120,8 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                       itemBuilder: (BuildContext context) {
                         return {
                           Theme.of(context).brightness == Brightness.light
-                              ? 'enable dark mode'
-                              : 'disable dark mode'
+                              ? 'Dark mode'
+                              : 'Light mode'
                         }.map((String choice) {
                           return PopupMenuItem<String>(
                             value: choice,
