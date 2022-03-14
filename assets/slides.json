@@ -142,6 +142,64 @@
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				}
 			]
+		},
+		{
+			"categoryName" : "Deck D",
+			"FlashCardMaker" : "AB",
+			"explanation" : "Third Deck explanation",
+
+			"slides": [
+				{
+					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
+					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
+					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden.",
+					"tags": [
+						{
+							"tag_name": "bold",
+							"fontWeight" : "bold",
+							"fontSize" : 42 
+						},
+						{
+							"tag_name": "red",
+							"fontWeight": "bold",
+							"color" : "FF0000"
+						}
+					]
+				},	{
+					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
+					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
+					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
+				}
+			]
+		},
+		{
+			"categoryName" : "Deck E",
+			"FlashCardMaker" : "AB",
+			"explanation" : "Third Deck explanation",
+
+			"slides": [
+				{
+					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
+					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
+					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden.",
+					"tags": [
+						{
+							"tag_name": "bold",
+							"fontWeight" : "bold",
+							"fontSize" : 42 
+						},
+						{
+							"tag_name": "red",
+							"fontWeight": "bold",
+							"color" : "FF0000"
+						}
+					]
+				},	{
+					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
+					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
+					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
+				}
+			]
 		}
 	]
 	
