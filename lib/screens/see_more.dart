@@ -46,8 +46,8 @@ class SeeMore extends ConsumerWidget {
               itemBuilder: (BuildContext context) {
                 return {
                   Theme.of(context).brightness == Brightness.light
-                      ? 'enable dark mode'
-                      : 'disable dark mode'
+                      ? 'Dark mode'
+                      : 'Light mode'
                 }.map((String choice) {
                   return PopupMenuItem<String>(
                     value: choice,

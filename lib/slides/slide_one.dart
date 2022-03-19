@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../screens/see_more.dart';
 import '../models/slide.dart';
@@ -32,7 +33,7 @@ class SlideOne extends ConsumerStatefulWidget {
 
 class _SlideOneState extends ConsumerState<SlideOne> {
   late FlipCardController _controller;
-  Map<String, StyledTextTagBase> tags = Map();
+  Map<String, StyledTextTagBase> tags = {};
 
   @override
   void initState() {
@@ -43,13 +44,33 @@ class _SlideOneState extends ConsumerState<SlideOne> {
       setState(() {
         tags.putIfAbsent(
           element.tag,
-          () => StyledTextTag(
-            style: GoogleFonts.robotoCondensed(
-                textStyle: TextStyle(
-                    fontWeight: fontWeight,
-                    fontSize: (element.fontSize != 0) ? element.fontSize : null,
-                    color: (element.color != "") ? Color(color) : null)),
-          ),
+          () => element.tag == 'link'
+              ? StyledTextActionTag(
+                  (String? text, Map<String?, String?> attrs) async {
+                    final String? link = attrs['href'];
+                    launch(link!);
+                  },
+                  style: GoogleFonts.robotoCondensed(
+                      textStyle: TextStyle(
+                          fontWeight: fontWeight,
+                          decoration: element.isUnderLine
+                              ? TextDecoration.underline
+                              : null,
+                          fontSize:
+                              (element.fontSize != 0) ? element.fontSize : null,
+                          color: (element.color != "") ? Color(color) : null)),
+                )
+              : StyledTextTag(
+                  style: GoogleFonts.robotoCondensed(
+                      textStyle: TextStyle(
+                          fontWeight: fontWeight,
+                          decoration: element.isUnderLine
+                              ? TextDecoration.underline
+                              : null,
+                          fontSize:
+                              (element.fontSize != 0) ? element.fontSize : null,
+                          color: (element.color != "") ? Color(color) : null)),
+                ),
         );
       });
     });

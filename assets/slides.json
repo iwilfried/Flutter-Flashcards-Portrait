@@ -92,14 +92,14 @@
 
 			"slides": [
 				{
-					"First Side": "<bold>Was</bold> ist <red>die</red> DSGVO?",
+					"First Side": "This is a <link href='https://flutter.dev'> Link </link>",
 					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
 					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden.",
 					"tags": [
 						{
-							"tag_name": "bold",
-							"fontWeight" : "bold",
-							"fontSize" : 42 
+							"tag_name": "link",
+							"color" : "0000FF",
+							"underLine" : true
 						},
 						{
 							"tag_name": "red",

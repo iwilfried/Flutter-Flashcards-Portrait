@@ -8,6 +8,7 @@ import 'package:flutter/gestures.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 import '../state_managment/current_card_state_manager.dart';
 import '../slides/slide_one.dart';
+import 'Impressum.dart';
 import 'main_screen.dart';
 
 class SlidesScreen extends ConsumerStatefulWidget {
@@ -165,15 +166,23 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                               MaterialPageRoute(
                                   builder: (context) => const MainScreen()),
                             )
-                          : ref
-                              .read(darkModeStateManagerProvider.notifier)
-                              .switchDarkMode(),
+                          : value == 'Impressum'
+                              ? Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const ImpressumScreen()),
+                                )
+                              : ref
+                                  .read(darkModeStateManagerProvider.notifier)
+                                  .switchDarkMode(),
                       itemBuilder: (BuildContext context) {
                         return {
                           Theme.of(context).brightness == Brightness.light
                               ? 'Dark mode'
                               : 'Light mode, Categories',
-                          'FlashDecks'
+                          'FlashDecks',
+                          'Impressum',
                         }.map((String choice) {
                           return PopupMenuItem<String>(
                             value: choice,

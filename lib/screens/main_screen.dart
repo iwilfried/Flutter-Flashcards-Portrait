@@ -11,6 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 import '../models/category.dart';
 import '../slides/slide_zero.dart';
 import '../state_managment/dark_mode_state_manager.dart';
+import 'Impressum.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -114,14 +115,22 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                         Icons.more_vert,
                         color: Theme.of(context).primaryColor,
                       ),
-                      onSelected: (String value) => ref
-                          .read(darkModeStateManagerProvider.notifier)
-                          .switchDarkMode(),
+                      onSelected: (String value) => value == 'Impressum'
+                          ? Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ImpressumScreen()),
+                            )
+                          : ref
+                              .read(darkModeStateManagerProvider.notifier)
+                              .switchDarkMode(),
                       itemBuilder: (BuildContext context) {
                         return {
                           Theme.of(context).brightness == Brightness.light
                               ? 'Dark mode'
-                              : 'Light mode'
+                              : 'Light mode',
+                          'Impressum'
                         }.map((String choice) {
                           return PopupMenuItem<String>(
                             value: choice,
