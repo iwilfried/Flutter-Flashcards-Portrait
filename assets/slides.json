@@ -4,13 +4,13 @@
 	"Categories" : [
 		{
 			"categoryName" : "DSGVO / GDPR",
-			"FlashCardMaker": "AL",
-			"explanation" : "first Deck explanation",
+			"FlashCardMaker": "Chris Tighe",
+			"explanation" : "Fragen und Antworten - DSGVO \nQuelle: https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/",
 			"slides": [
 				{
 					"First Side": "Was ist die <red>DSGVO?</red>",
-					"Second Side": "<boldtxt>Eine Verordnung der Europäischen Union</boldtxt>, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die <red>Sicherheit und den Schutz von personenbezogenen Daten</red>.",
-					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden.",
+					"Second Side": "<boldtxt>Eine Verordnung der Europäischen Union</boldtxt>, die darauf abzielt, den Umgang mit personen-bezogenen Daten und Informationen zu standardisieren, insbesondere im Hinblick auf die <redthin>Sicherheit und den Schutz von personenbezogenen Daten</redthin>.",
+					"Learn more": "Mit Wirkung zum <boldtxt>25. Mai 2018</boldtxt> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). \n\nEs geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden.",
 					"tags": [
 						{
 							"tag_name": "bold",
@@ -20,6 +20,10 @@
 						{
 							"tag_name": "red",
 							"fontWeight": "bold",
+							"color" : "c16464"
+						},
+						{
+							"tag_name": "redthin",
 							"color" : "c16464"
 						},
 						{
