@@ -10,7 +10,7 @@
 				{
 					"First Side": "Was ist die <red>DSGVO?</red>",
 					"Second Side": "<boldtxt>Verordnung der Europäischen Union</boldtxt>, die den Umgang mit personenbezogenen Daten und Informationen standardisiert, insbesondere <redthin>Sicherheit und Schutz von personenbezogenen Daten</redthin>.",
-					"Learn more": "Mit Wirkung zum <boldtxt>25. Mai 2018</boldtxt> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). \n\nEs geht auch um den Export und Transfer personenbezogener Daten <boldtxt>außerhalb</boldtxt> der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden.",
+					"Learn more": "Mit Wirkung zum <boldtxt>25. Mai 2018</boldtxt> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). \n\nEs geht auch um den Export und Transfer personenbezogener Daten <boldtxt>außerhalb</boldtxt> der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die <boldtxt>Regulierung innerhalb der EU vereinheitlicht</boldtxt>.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden.",
 					"tags": [
 						{
 							"tag_name": "bold",
@@ -32,8 +32,10 @@
 							"fontSize" : 19
 						}
 					]
-				},	{
-					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
+				},	
+				
+					{
+					"First Side": "Wer ist in erster Linie von der <red>DSGVO</red> betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				},
