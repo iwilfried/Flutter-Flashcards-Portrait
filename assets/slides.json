@@ -37,12 +37,20 @@
 					{
 					"First Side": "Wer ist in erster Linie von der <red>DSGVO</red> betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
-					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
+					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können.",
+					"tags": [
+						{
+							"tag_name": "red",
+							"fontWeight": "bold",
+							"color" : "c16464"
+						}
+					]
 				},
 				{
 					"First Side": "Was wird in der DSGVO als rechtmäßige Einwilligung betrachtet?",
 					"Second Side": "Eine eindeutige bestätigende Handlung, durch die die Person frei, in einer spezifischen und informierten Weise, ihre Zustimmung zur Datenverarbeitung ausdrückt.",
 					"Learn more": "Nach der DSGVO muss die Einwilligung durch eine eindeutige positive Handlung erfolgen, mit der die betroffene Person frei, konkret, informiert und unmissverständlich ihre Zustimmung zur Verarbeitung personenbezogener Daten zum Ausdruck bringt - zum Beispiel durch eine schriftliche Erklärung, auch auf elektronischem Wege, oder eine mündliche Erklärung. Dies könnte durch das Ankreuzen eines Kästchens beim Aufrufen einer Website, durch die Zustimmung zu bestimmten technischen Parametern für IT-Dienste oder durch eine andere Erklärung oder ein anderes Verhalten geschehen, aus dem klar hervorgeht, dass die betroffene Person mit der vorgeschlagenen Verarbeitung ihrer personenbezogenen Daten einverstanden ist. Bei Schweigen, nicht angekreuzten Kästchen oder Inaktivität kann daher keine Einwilligung vorliegen. Die erteilte Einwilligung gilt für alle Verarbeitungstätigkeiten mit demselben Zweck/denselben Zwecken. Dient die Verarbeitung mehreren Zwecken, muss die Einwilligung für alle Zwecke erteilt werden. Wenn die Einwilligung der betroffenen Person auf eine elektronische Anfrage hin erteilt wird, muss die Anfrage klar und prägnant sein und darf die Nutzung des Dienstes, für den sie erteilt wird, nicht unnötig stören."
+
 				},
 				{
 					"First Side": "Wie hoch ist die maximale Geldstrafe für die Nichteinhaltung der DSGVO?",
