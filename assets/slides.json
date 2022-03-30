@@ -1,11 +1,11 @@
 {
 	"title": "General Data Protection Regulation(GDPR)",
-	"lesson": "Einführung",
+	"lesson": "Q & A",
 	"Categories" : [
 		{
 			"categoryName" : "DSGVO / GDPR",
-			"FlashCardMaker": "Chris Tighe",
-			"explanation" : "Fragen und Antworten - DSGVO \nQuelle: https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/",
+			"FlashCardMaker": "Chris Tighe - AT INTERNET",
+			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre \nSeit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, \ndie personenbezogene Daten von europäischen Bürgern verarbeiten.  \nQuelle: https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/ \n\nGlossary \nEU / EWR \nDer Europäische Wirtschaftsraum ist im Jahr 1994 durch ein Abkommen zwischen der Europäischen Union (EU) \nund den sogenannten EFTA-Staaten (Island, Lichtenstein und Norwegen) entstanden. \nDie EWR-Mitglieder bilden einen gemeinsamen Markt. \n\nGDPR - General Data Protection Regulation \nDSGVO - Datenschutz Grundverordnung",
 			"slides": [
 				{
 					"First Side": "Was ist die <red>DSGVO?</red>",
@@ -37,11 +37,15 @@
 					{
 					"First Side": "Wer ist in erster Linie von der <red>DSGVO</red> betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
-					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können.",
+					"Learn more": "Die betroffene Person ist definiert als eine <redthin>natürliche Person</redthin>, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. \n\nDer Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. \n\nDer Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. \n\nDer Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. \n\nDie DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. \n\nVerantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können.",
 					"tags": [
 						{
 							"tag_name": "red",
 							"fontWeight": "bold",
+							"color" : "c16464"
+						},
+						{
+							"tag_name": "redthin",
 							"color" : "c16464"
 						}
 					]
