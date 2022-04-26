@@ -106,6 +106,32 @@
 					"Second Side": "Ein Ansatz zur Integration des Datenschutzes in die Design- und Architekturspezifikationen neuer Systeme und Prozesse.",
 					"Learn more": "Privacy-by-Design ist ein in Artikel 25 der DSGVO festgelegter Grundsatz, der darauf abzielt, die Privatsphäre zu schützen, indem der Schutz personenbezogener Daten in die Designspezifikationen von Technologien, Geschäftspraktiken und physischen Infrastrukturen integriert wird. Dieser Ansatz minimiert die Risiken der Nichtkonformität der Datenverarbeitung mit der DSGVO durch die Implementierung präventiver Maßnahmen. Der „Privacy-by-Design“-Ansatz ermöglicht eine Win-Win-Beziehung, bei der der Schutz der Privatsphäre für besseres Vertrauen und bessere Geschäft sorgen kann. Lesen Sie dazu die Datenschutzrichtlinie von AT Internet"
 				}
+			],
+			"glossries": [
+				{
+					"title" : "Pineopple related questions:",
+					"questions" :[
+						"first one",
+						"second one",
+						"third One"
+					]
+				},
+				{
+					"title" : "System related questions:",
+					"list" :[
+						"first one",
+						"second one",
+						"third One"
+					]
+				},
+				{
+					"title" : "Support related questions:",
+					"list" :[
+						"first one",
+						"second one",
+						"third One"
+					]
+				}
 			]
 		},
 		{
@@ -135,7 +161,8 @@
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				}
-			]
+			],
+			"glossries": []
 		},
 		{
 			"categoryName" : "Deck C",
@@ -164,7 +191,8 @@
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				}
-			]
+			],
+			"glossries": []
 		},
 		{
 			"categoryName" : "Deck D",
@@ -193,7 +221,8 @@
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				}
-			]
+			],
+			"glossries": []
 		},
 		{
 			"categoryName" : "Deck E",
@@ -222,7 +251,8 @@
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				}
-			]
+			],
+			"glossries": []
 		}
 	]
 	

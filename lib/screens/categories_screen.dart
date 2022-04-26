@@ -93,9 +93,8 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                           context,
                           MaterialPageRoute(
                               builder: (context) => SlidesScreen(
-                                  slides: widget.categories[index].slides,
-                                  categoryName:
-                                      widget.categories[index].categoryName)),
+                                    category: widget.categories[index],
+                                  )),
                         ),
                         child: Text('Start Studying',
                             style: GoogleFonts.robotoSlab(

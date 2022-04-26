@@ -5,18 +5,17 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/gestures.dart';
 
+import '../models/category.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 import '../state_managment/current_card_state_manager.dart';
 import '../slides/slide_one.dart';
 import 'Impressum.dart';
+import 'glossries_screen.dart';
 import 'main_screen.dart';
 
 class SlidesScreen extends ConsumerStatefulWidget {
-  final String categoryName;
-  final List<Slide> slides;
-  const SlidesScreen(
-      {Key? key, required this.slides, required this.categoryName})
-      : super(key: key);
+  final Category category;
+  const SlidesScreen({Key? key, required this.category}) : super(key: key);
 
   @override
   ConsumerState<SlidesScreen> createState() => _MainScreenState();
@@ -26,19 +25,23 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
   int page = 0;
   bool isQuestion = true;
   List<Widget> list = [];
+  late String categoryName;
+  late List<Slide> slides;
 
   PageController pageControllerH = PageController();
 
   @override
   void initState() {
-    widget.slides.forEach((newslide) {
+    slides = widget.category.slides;
+    categoryName = widget.category.categoryName;
+    slides.forEach((newslide) {
       list.add(SlideOne(
         slide: newslide,
-        categoryName: widget.categoryName,
+        categoryName: categoryName,
         nextPage: nextPage,
         flip: flip,
         previousPage: previousPage,
-        pages: widget.slides.length,
+        pages: slides.length,
       ));
     });
     super.initState();
@@ -150,6 +153,16 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                   ],
                 ),
               ),
+              IconButton(
+                  padding: EdgeInsets.zero,
+                  constraints: const BoxConstraints(),
+                  onPressed: () => Navigator.of(context).push(MaterialPageRoute(
+                      builder: (context) => GlossariesScreen(
+                          glossries: widget.category.glossries))),
+                  icon: Icon(
+                    Icons.collections_bookmark,
+                    color: Theme.of(context).primaryColor,
+                  )),
               Expanded(
                 flex: 1,
                 child: Row(
@@ -227,7 +240,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
             height: 45,
             child:
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              Text(widget.categoryName,
+              Text(categoryName,
                   style: GoogleFonts.robotoSlab(
                     textStyle: GoogleFonts.robotoSlab(
                         textStyle: const TextStyle(
