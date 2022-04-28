@@ -25,6 +25,7 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
         body: Container(
       padding: const EdgeInsets.all(10),
@@ -112,7 +113,8 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                     height: 1,
                     thickness: 2,
                   ),
-                  Padding(
+                  Container(
+                    width: width,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 15),
                     child: Text(
