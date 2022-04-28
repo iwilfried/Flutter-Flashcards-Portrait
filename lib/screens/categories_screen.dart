@@ -58,7 +58,7 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                         maxLines: 1,
                         style: GoogleFonts.oswald(
                             textStyle: TextStyle(
-                          fontWeight: FontWeight.bold,
+                          fontWeight: FontWeight.w400,
                           color: Theme.of(context).primaryColor,
                           fontSize: 27,
                         )),
@@ -87,7 +87,7 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                           primary: const Color(0xffF16623),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(1.0)),
-                          padding: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(10.0),
                         ),
                         onPressed: () => Navigator.pushReplacement(
                           context,
@@ -101,28 +101,29 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                                 textStyle: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
-                              fontSize: 12,
+                              fontSize: 14,
                             ))),
                       ),
                     ],
                   ),
                 ),
                 children: [
+                  const Divider(
+                    height: 1,
+                    thickness: 2,
+                  ),
                   Padding(
-                    padding: const EdgeInsets.all(20),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Text(
-                          widget.categories[index].explanation,
-                          style: GoogleFonts.oswald(
-                              textStyle: TextStyle(
-                            fontWeight: FontWeight.normal,
-                            color: Theme.of(context).primaryColor,
-                            fontSize: 15,
-                          )),
-                        ),
-                      ],
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 15),
+                    child: Text(
+                      widget.categories[index].explanation,
+                      textAlign: TextAlign.start,
+                      style: GoogleFonts.oswald(
+                          textStyle: TextStyle(
+                        fontWeight: FontWeight.normal,
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 15,
+                      )),
                     ),
                   ),
                 ],

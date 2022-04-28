@@ -52,6 +52,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                   },
                   style: GoogleFonts.robotoCondensed(
                       textStyle: TextStyle(
+                          fontFamily: "RobotoSerif",
                           fontWeight: fontWeight,
                           decoration: element.isUnderLine
                               ? TextDecoration.underline
@@ -122,12 +123,11 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                           child: StyledText(
                         textAlign: TextAlign.center,
                         text: widget.slide.firstSide,
-                        style: GoogleFonts.robotoCondensed(
-                          textStyle: TextStyle(
-                            color: Theme.of(context).primaryColor,
-                            fontWeight: FontWeight.w400,
-                            fontSize: 36,
-                          ),
+                        style: TextStyle(
+                          fontFamily: "RobotoSerif",
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 36,
                         ),
                         tags: tags,
                       )),
@@ -143,13 +143,12 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                         children: [
                           StyledText(
                             text: widget.slide.secondSide,
-                            style: GoogleFonts.robotoCondensed(
-                              textStyle: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 19,
-                                height: 1.7,
-                              ),
+                            style: TextStyle(
+                              fontFamily: "RobotoSerif",
+                              color: Theme.of(context).primaryColor,
+                              fontWeight: FontWeight.w400,
+                              fontSize: 19,
+                              height: 1.7,
                             ),
                             tags: tags,
                           ),
