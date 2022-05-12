@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:splash_screen_view/SplashScreenView.dart';
 
 import 'state_managment/dark_mode_state_manager.dart';
 import 'screens/main_screen.dart';
@@ -39,6 +40,17 @@ class MyApp extends ConsumerWidget {
           /* dark theme settings */
         ),
         themeMode: darkMode ? ThemeMode.dark : ThemeMode.light,
-        home: const MainScreen());
+        home: SplashScreenView(
+          navigateRoute: const MainScreen(),
+          duration: 3000,
+          imageSize: 130,
+          imageSrc: "assets/images/view.png",
+          text: "Accelerated Learning",
+          textType: TextType.TyperAnimatedText,
+          textStyle: const TextStyle(
+            fontSize: 30.0,
+          ),
+          backgroundColor: Colors.white,
+        ));
   }
 }
