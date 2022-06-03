@@ -1,4 +1,8 @@
-class Tags {
+// ignore_for_file: must_be_immutable
+
+import 'package:equatable/equatable.dart';
+
+class Tags extends Equatable {
   String tag;
   String fontWeight;
   String color;
@@ -21,4 +25,15 @@ class Tags {
               json['fontSize'].toString(),
             ) ??
             0;
+
+  Map<String, dynamic> toJson() => {
+        "tag_name": tag,
+        "fontWeight": fontWeight,
+        "color": color,
+        "fontSize": fontSize.toString(),
+        "underLine": isUnderLine,
+      };
+
+  @override
+  List<Object> get props => [tag, fontWeight, color, fontSize, isUnderLine];
 }

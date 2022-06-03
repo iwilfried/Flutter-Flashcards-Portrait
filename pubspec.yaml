@@ -42,6 +42,7 @@ dependencies:
   styled_text: ^5.0.0+1
   url_launcher: ^6.0.20
   splash_screen_view: ^3.0.0
+  equatable: ^2.0.3
   
 dev_dependencies:
   flutter_test:

@@ -10,6 +10,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 import '../models/category.dart';
 import '../slides/slide_zero.dart';
+import '../state_managment/categories_state_manager.dart';
 import '../state_managment/dark_mode_state_manager.dart';
 import 'Impressum.dart';
 
@@ -46,9 +47,11 @@ class _MainScreenState extends ConsumerState<MainScreen> {
           List<Category>.from(catJson.map((e) => Category.fromJson(e)));
       list = [
         SlideZero(startLesson, title),
-        CategoriesScreen(categories: categories, title: title, lesson: lesson),
+        CategoriesScreen(title: title, lesson: lesson),
       ];
     });
+    WidgetsBinding.instance.addPostFrameCallback((_) =>
+        ref.read(categoriesStateManagerProvider.notifier).init(categories));
   }
 
   @override
@@ -62,7 +65,7 @@ class _MainScreenState extends ConsumerState<MainScreen> {
     setState(() {
       list = [
         SlideZero(startLesson, title),
-        CategoriesScreen(categories: categories, title: title, lesson: lesson),
+        CategoriesScreen(title: title, lesson: lesson),
       ];
     });
   }

@@ -3,17 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../models/category.dart';
+import '../state_managment/categories_state_manager.dart';
 import 'slides_screen.dart';
 
 class CategoriesScreen extends ConsumerStatefulWidget {
-  final List<Category> categories;
   final String title;
   final String lesson;
-  const CategoriesScreen(
-      {Key? key,
-      required this.categories,
-      required this.title,
-      required this.lesson})
+  const CategoriesScreen({Key? key, required this.title, required this.lesson})
       : super(key: key);
 
   @override
@@ -25,12 +21,13 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
 
   @override
   Widget build(BuildContext context) {
+    List<Category> categories = ref.watch(categoriesStateManagerProvider);
     final width = MediaQuery.of(context).size.width;
     return Scaffold(
-        body: Container(
-      padding: const EdgeInsets.all(10),
-      child: ListView.builder(
-          itemCount: widget.categories.length,
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        child: ListView.builder(
+          itemCount: categories.length,
           itemBuilder: (context, index) {
             return Card(
               child: ExpansionTile(
@@ -55,24 +52,26 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       AutoSizeText(
-                        widget.categories[index].categoryName,
+                        categories[index].categoryName,
                         maxLines: 1,
                         style: GoogleFonts.oswald(
-                            textStyle: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 27,
-                        )),
+                          textStyle: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 27,
+                          ),
+                        ),
                       ),
                       AutoSizeText(
-                        "Fashcard Maker: ${widget.categories[index].flashCardMaker}",
+                        "Fashcard Maker: ${categories[index].flashCardMaker}",
                         maxLines: 1,
                         textAlign: TextAlign.start,
                         style: GoogleFonts.oswald(
-                            textStyle: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 18,
-                        )),
+                          textStyle: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontSize: 18,
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -93,17 +92,45 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                         onPressed: () => Navigator.pushReplacement(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => SlidesScreen(
-                                    category: widget.categories[index],
-                                  )),
+                            builder: (context) => SlidesScreen(
+                              category: categories[index],
+                            ),
+                          ),
                         ),
-                        child: Text('Start Studying',
-                            style: GoogleFonts.robotoSlab(
-                                textStyle: const TextStyle(
+                        child: Text(
+                          'Start Studying',
+                          style: GoogleFonts.robotoSlab(
+                            textStyle: const TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w500,
                               fontSize: 14,
-                            ))),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 30,
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: const Color(0xffF16623),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(1.0)),
+                          padding: const EdgeInsets.all(10.0),
+                        ),
+                        onPressed: () => ref
+                            .read(categoriesStateManagerProvider.notifier)
+                            .resetAnswers(categories[index].categoryName),
+                        child: Text(
+                          'Reset Answers',
+                          style: GoogleFonts.robotoSlab(
+                            textStyle: const TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.w500,
+                              fontSize: 14,
+                            ),
+                          ),
+                        ),
                       ),
                     ],
                   ),
@@ -118,20 +145,23 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 15),
                     child: Text(
-                      widget.categories[index].explanation,
+                      categories[index].explanation,
                       textAlign: TextAlign.start,
                       style: GoogleFonts.oswald(
-                          textStyle: TextStyle(
-                        fontWeight: FontWeight.normal,
-                        color: Theme.of(context).primaryColor,
-                        fontSize: 15,
-                      )),
+                        textStyle: TextStyle(
+                          fontWeight: FontWeight.normal,
+                          color: Theme.of(context).primaryColor,
+                          fontSize: 15,
+                        ),
+                      ),
                     ),
                   ),
                 ],
               ),
             );
-          }),
-    ));
+          },
+        ),
+      ),
+    );
   }
 }
