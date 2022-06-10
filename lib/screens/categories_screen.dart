@@ -113,23 +113,30 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                       ),
                       ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          primary: const Color(0xffF16623),
+                          primary: Colors.blue,
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(1.0)),
-                          padding: const EdgeInsets.all(10.0),
+                              borderRadius: BorderRadius.circular(20.0)),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 10.0, vertical: 5),
                         ),
                         onPressed: () => ref
                             .read(categoriesStateManagerProvider.notifier)
                             .resetAnswers(categories[index].categoryName),
-                        child: Text(
-                          'Reset Answers',
-                          style: GoogleFonts.robotoSlab(
-                            textStyle: const TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.w500,
-                              fontSize: 14,
+                        child: Row(
+                          children: [
+                            const Icon(Icons.settings_backup_restore_outlined),
+                            const SizedBox(width: 5),
+                            Text(
+                              'Reset',
+                              style: GoogleFonts.robotoSlab(
+                                textStyle: const TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 14,
+                                ),
+                              ),
                             ),
-                          ),
+                          ],
                         ),
                       ),
                     ],

@@ -71,7 +71,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
   }
 
   void nextPage() {
-    if (page < list.length) {
+    if (page < list.length - 1) {
       pageControllerH.nextPage(
           duration: const Duration(milliseconds: 3),
           curve: Curves.fastOutSlowIn);
@@ -235,26 +235,29 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                 fit: BoxFit.cover)),
         child: Column(
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: Text(_getRightAnswersCount(slides).toString()),
-                ),
-                const Icon(
-                  Icons.check_box,
-                  color: Colors.green,
-                ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: Text(_getWrongAnswersCount(slides).toString()),
-                ),
-                const Icon(
-                  Icons.cancel,
-                  color: Colors.red,
-                ),
-              ],
+            Padding(
+              padding: const EdgeInsets.only(top: 16.0, right: 16.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Text(_getRightAnswersCount(slides).toString()),
+                  ),
+                  const Icon(
+                    Icons.check_box,
+                    color: Colors.green,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5),
+                    child: Text(_getWrongAnswersCount(slides).toString()),
+                  ),
+                  const Icon(
+                    Icons.cancel,
+                    color: Colors.red,
+                  ),
+                ],
+              ),
             ),
             Expanded(
               child: PageView(
@@ -357,45 +360,54 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                   borderRadius: BorderRadius.all(Radius.circular(5))),
               padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 1),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    constraints: const BoxConstraints(),
-                    icon: const Icon(
-                      Icons.arrow_left,
-                      color: Colors.grey,
-                    ),
-                    iconSize: 50,
-                    onPressed: () {
-                      previousPage();
-                    },
+                  Expanded(
+                    child: page == 0
+                        ? const SizedBox()
+                        : IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(),
+                            icon: const Icon(
+                              Icons.arrow_left,
+                              color: Colors.grey,
+                            ),
+                            iconSize: 50,
+                            onPressed: () {
+                              previousPage();
+                            },
+                          ),
                   ),
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    constraints: const BoxConstraints(),
-                    icon: const Icon(
-                      Icons.fiber_manual_record,
-                      color: Colors.grey,
+                  Expanded(
+                    child: IconButton(
+                      padding: EdgeInsets.zero,
+                      constraints: const BoxConstraints(),
+                      icon: const Icon(
+                        Icons.fiber_manual_record,
+                        color: Colors.grey,
+                      ),
+                      iconSize: 27,
+                      onPressed: () {
+                        _controllers[page].toggleCard();
+                      },
                     ),
-                    iconSize: 27,
-                    onPressed: () {
-                      _controllers[page].toggleCard();
-                    },
                   ),
-                  IconButton(
-                    padding: EdgeInsets.zero,
-                    constraints: const BoxConstraints(),
-                    icon: const Icon(
-                      Icons.arrow_right,
-                      color: Colors.grey,
-                    ),
-                    iconSize: 50,
-                    onPressed: () {
-                      nextPage();
-                    },
+                  Expanded(
+                    child: page == list.length - 1
+                        ? const SizedBox()
+                        : IconButton(
+                            padding: EdgeInsets.zero,
+                            constraints: const BoxConstraints(),
+                            icon: const Icon(
+                              Icons.arrow_right,
+                              color: Colors.grey,
+                            ),
+                            iconSize: 50,
+                            onPressed: () {
+                              nextPage();
+                            },
+                          ),
                   ),
                 ],
               ),
