@@ -141,29 +141,26 @@
 			]
 		},
 		{
-			"categoryName" : "Deck B",
-			"FlashCardMaker" : "MO",
-			"explanation" : "Second Deck explanation",
+			"categoryName" : "Barrierefreiheit im Netz",
+			"FlashCardMaker" : "WI",
+			"explanation" : "Fragen und Antworten zur Zertifizierung",
 
 			"slides": [
 				{
+					"First Side": "Weshalb ist Barrierefreiheit nötig?",
+					"Second Side": "Viele Benutzerinnen und Benutzer sind auf die individuelle Anpassbarkeit angewiesen, etwa die Schriftvergrösserung im Browser oder sie verwenden ein spezielles Ausgabegerät, beispielsweise das Bildschirmleseprogramm (Screen-Reader) eines Blinden.",
+					"Learn more": "Gerne vergessen gehen die zahlreichen Tastaturbediener, die also keine Maus nutzen. Das Spektrum der Menschen mit einer Behinderung reicht von altersbedingten Mobilitäts- und Seh-Einschränkungen über den motorisch eingeschränkten Tetraplegiker bis zum Blinden. Es gibt viele weiche und individuell geprägte Barrieren, vor denen die vielen Nutzergruppen stehen. <redthin>Gerade diesen Bevölkerungsteilen bietet sich mit den internetbasierten Kommunikations­technologien ein grosser Schritt zur Teilhabe an Information, an Bildung und Geselligkeit an.</redthin>",
+					
+				},
+				{
+					"First Side": "Wer braucht Barrierefreiheit?",
+					"Second Side": "Durch eine körperliche, geistige oder psychische Behinderung kann die Nutzung des Internets erschwert oder verunmöglicht werden. Je nach Behinderung sind die Auswirkungen auf das Arbeiten am Computer und somit auch die Anforderungen unterschiedlich.",
+					"Learn more": "Behinderungskategorien und ihre Anforderungen im Hinblick auf die Internet-Nutzung: #Sehkraft, Blind \n\n#Sehkraft, Sehbehinderung (breites, wachsendes Spektrum) #Motorik und Mobilität #Kognition(Wahrnehmungsfähigkeit, geistige Behinderungen)(z.B. Para- und Tetraplegiker) #Hörkraft(Taube, Stumme und Taubstumme)"
+					
+				},	
+				
+				{
 					"First Side": "This is a <link href='https://flutter.dev'> Link </link>",
-					"Second Side": "<red>Eine</red> Verordnung der Europäischen Union, die darauf abzielt, den Umgang mit personenbezogenen Informationen zu standardisieren, insbesondere im Hinblick auf die Sicherheit und den Schutz von personenbezogenen Daten.",
-					"Learn more": "<red>Mit</red> Wirkung zum 25. Mai 2018 ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). Es geht auch um den Export personenbezogener Daten außerhalb der EU und EWR-Gebiete. In einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die Regulierung innerhalb der EU vereinheitlicht. Seit ihrer Umsetzung ist die DSGVO weltweit zu einem Standard geworden.",
-					"tags": [
-						{
-							"tag_name": "link",
-							"color" : "0000FF",
-							"underLine" : true
-						},
-						{
-							"tag_name": "red",
-							"fontWeight": "bold",
-							"color" : "FF0000"
-						}
-					]
-				},	{
-					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
 					"Learn more": "Die betroffene Person ist definiert als eine natürliche Person, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. Der Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. Der Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. Der Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. Die DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. Verantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
 				}
