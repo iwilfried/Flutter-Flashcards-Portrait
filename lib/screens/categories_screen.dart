@@ -154,7 +154,7 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                     child: Text(
                       categories[index].explanation,
                       textAlign: TextAlign.start,
-                      style: GoogleFonts.oswald(
+                      style: GoogleFonts.roboto(
                         textStyle: TextStyle(
                           fontWeight: FontWeight.normal,
                           color: Theme.of(context).primaryColor,

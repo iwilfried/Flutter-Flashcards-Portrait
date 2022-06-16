@@ -5,7 +5,7 @@
 		{
 			"categoryName" : "DSGVO / GDPR",
 			"FlashCardMaker": "Chris Tighe - AT INTERNET",
-			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre \nSeit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, \ndie personenbezogene Daten von europäischen Bürgern verarbeiten.  \nQuelle: https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/ \n\nGlossary \nEU / EWR \nDer Europäische Wirtschaftsraum ist im Jahr 1994 durch ein Abkommen zwischen der Europäischen Union (EU) \nund den sogenannten EFTA-Staaten (Island, Lichtenstein und Norwegen) entstanden. \nDie EWR-Mitglieder bilden einen gemeinsamen Markt. \n\nGDPR - General Data Protection Regulation \nDSGVO - Datenschutz Grundverordnung",
+			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle: https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/",
 			"slides": [
 				{
 					"First Side": "Was ist die <red>DSGVO?</red>",
@@ -245,6 +245,7 @@
 							"fontWeight": "bold",
 							"color" : "FF0000"
 						}
+						
 					]
 				},	{
 					"First Side": "Wer ist in erster Linie von der DSGVO betroffen?",
