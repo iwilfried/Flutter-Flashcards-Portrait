@@ -60,7 +60,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
                   child: Text(
-                    "Glossries",
+                    "Glossary",
                     style: GoogleFonts.oswald(
                       textStyle: TextStyle(
                         fontWeight: FontWeight.bold,

@@ -30,6 +30,11 @@
 							"tag_name": "boldtxt",
 							"fontWeight": "bold",
 							"fontSize" : 19
+						},
+						{
+							"tag_name": "font",
+							"font-family" : "Roboto",
+							"fontSize" : 42 
 						}
 					]
 				},	
@@ -108,16 +113,18 @@
 				}
 			],
 			"glossries": [
+				
 				{
-					"title" : "Pineopple related questions:",
+					"title" : "Datenschutz: DSGVO",
+					
 					"questions" :[
-						"first one",
-						"second one",
-						"third One"
+						"<red>Betroffene Person</red>  \n\nEine natürliche Person, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, einer Kennnummer usw., identifiziert werden kann.\n\n" ,
+						"<red>Personenbezogene Daten</red> \n\nAlle Auskünfte, die sich auf eine bestimmte oder bestimmbare natürliche Person („betroffene Person“) beziehen.\n\n",
+						"<red>Sensible Daten</red> \n\nPersonenbezogene Daten, aus denen die rassische und ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche Überzeugungen oder eine Gewerkschaftszugehörigkeit hervorgehen, sowie genetische Daten, biometrische Daten, Gesundheitsdaten oder Daten zum Sexualleben oder zur sexuellen Orientierung einer natürlichen Person. Auch als „besondere Kategorien personenbezogener Daten“ bezeichnet. Weitere Informationen\n\n"
 					]
 				},
 				{
-					"title" : "System related questions:",
+					"title" : "Deck B:",
 					"list" :[
 						"first one",
 						"second one",
@@ -125,7 +132,7 @@
 					]
 				},
 				{
-					"title" : "Support related questions:",
+					"title" : "Deck C:",
 					"list" :[
 						"first one",
 						"second one",
