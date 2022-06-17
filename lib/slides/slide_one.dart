@@ -90,7 +90,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
           const Spacer(),
           Container(
             width: width * .8,
-            height: height * .55,
+            height: height * .50,
             margin: const EdgeInsets.only(
                 left: 32.0, right: 32.0, top: 0.0, bottom: 0.0),
             color: Colors.transparent,
@@ -125,8 +125,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                 )),
               ),
               back: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 decoration: const BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
