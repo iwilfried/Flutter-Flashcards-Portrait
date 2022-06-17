@@ -87,7 +87,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Expanded(child: SizedBox()),
+          const Spacer(),
           Container(
             width: width * .8,
             height: height * .55,
@@ -125,57 +125,61 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                 )),
               ),
               back: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 10, vertical: 15),
                 decoration: const BoxDecoration(
                   color: Colors.transparent,
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 ),
                 child: Center(
-                    child: Column(
-                  children: [
-                    StyledText(
-                      text: widget.slide.secondSide,
-                      style: TextStyle(
-                        fontFamily: "RobotoSerif",
-                        color: Theme.of(context).primaryColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 19,
-                        height: 1.7,
-                      ),
-                      tags: tags,
-                    ),
-                    const Spacer(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        RichText(
-                          text: TextSpan(
-                            text: "Learn more...",
-                            style: GoogleFonts.robotoCondensed(
-                                textStyle: const TextStyle(
-                              height: 1.7,
-                              color: Colors.blue,
-                              fontSize: 19,
-                            )),
-                            recognizer: TapGestureRecognizer()
-                              ..onTap = () => Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => SeeMore(
-                                            categoryName: widget.categoryName,
-                                            tags: tags,
-                                            text: widget.slide.learnMore)),
-                                  ),
-                          ),
+                  child: Column(
+                    children: [
+                      const Spacer(),
+                      StyledText(
+                        textAlign: TextAlign.justify,
+                        text: widget.slide.secondSide,
+                        style: TextStyle(
+                          fontFamily: "RobotoSerif",
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 19,
+                          height: 1.7,
                         ),
-                      ],
-                    )
-                  ],
-                )),
+                        tags: tags,
+                      ),
+                      const Spacer(flex: 5),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              text: "Learn more...",
+                              style: GoogleFonts.robotoCondensed(
+                                  textStyle: const TextStyle(
+                                height: 1.7,
+                                color: Colors.blue,
+                                fontSize: 19,
+                              )),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SeeMore(
+                                              categoryName: widget.categoryName,
+                                              tags: tags,
+                                              text: widget.slide.learnMore)),
+                                    ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ),
-          const Expanded(child: SizedBox()),
+          const Spacer(),
         ],
       ),
     );

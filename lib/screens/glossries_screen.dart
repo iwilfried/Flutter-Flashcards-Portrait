@@ -2,6 +2,11 @@ import 'package:auto_size_text/auto_size_text.dart';
 import "package:flutter/material.dart";
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:styled_text/styled_text.dart';
+import 'package:styled_text/tags/styled_text_tag.dart';
+import 'package:styled_text/tags/styled_text_tag_action.dart';
+import 'package:styled_text/tags/styled_text_tag_base.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../models/glossry.dart';
 import '../state_managment/dark_mode_state_manager.dart';
@@ -15,6 +20,49 @@ class GlossariesScreen extends ConsumerStatefulWidget {
 }
 
 class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
+  late Map<String, StyledTextTagBase> tags = {};
+  @override
+  void initState() {
+    widget.glossries[0].tags.forEach((element) {
+      int color = int.parse("0xff" + element.color);
+      FontWeight fontWeight =
+          element.fontWeight == "bold" ? FontWeight.bold : FontWeight.normal;
+      setState(() {
+        tags.putIfAbsent(
+          element.tag,
+          () => element.tag == 'link'
+              ? StyledTextActionTag(
+                  (String? text, Map<String?, String?> attrs) async {
+                    final String? link = attrs['href'];
+                    launch(link!);
+                  },
+                  style: GoogleFonts.robotoCondensed(
+                      textStyle: TextStyle(
+                          fontFamily: "RobotoSerif",
+                          fontWeight: fontWeight,
+                          decoration: element.isUnderLine
+                              ? TextDecoration.underline
+                              : null,
+                          fontSize:
+                              (element.fontSize != 0) ? element.fontSize : null,
+                          color: (element.color != "") ? Color(color) : null)),
+                )
+              : StyledTextTag(
+                  style: GoogleFonts.robotoCondensed(
+                      textStyle: TextStyle(
+                          fontWeight: fontWeight,
+                          decoration: element.isUnderLine
+                              ? TextDecoration.underline
+                              : null,
+                          fontSize:
+                              (element.fontSize != 0) ? element.fontSize : null,
+                          color: (element.color != "") ? Color(color) : null)),
+                ),
+        );
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -102,14 +150,16 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                                   (i) {
                                 return Padding(
                                   padding: const EdgeInsets.all(8.0),
-                                  child: Text(
-                                    widget.glossries[index].questions[i],
+                                  child: StyledText(
+                                    textAlign: TextAlign.center,
+                                    text: widget.glossries[index].questions[i],
                                     style: GoogleFonts.robotoCondensed(
                                         textStyle: TextStyle(
                                       fontWeight: FontWeight.normal,
                                       color: Theme.of(context).primaryColor,
                                       fontSize: 22,
                                     )),
+                                    tags: tags,
                                   ),
                                 );
                               }),

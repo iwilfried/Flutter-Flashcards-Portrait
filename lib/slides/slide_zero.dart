@@ -28,17 +28,16 @@ class SlideZero extends ConsumerWidget {
                     : "assets/images/backLandscape.png"),
                 fit: BoxFit.cover)),
         child: Padding(
-          padding:
-              const EdgeInsets.only(top: 10, bottom: 10, right: 20, left: 20),
+          padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 20),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               isPortrait
                   ? Column(
                       children: [
                         Image.asset('assets/images/view.png',
-                            width: 40, height: 40),
+                            width: 60, height: 60),
                         const SizedBox(
                           height: 15,
                         ),
@@ -71,7 +70,6 @@ class SlideZero extends ConsumerWidget {
                         ),
                       ],
                     ),
-              const Spacer(),
               AutoSizeText(
                 '$title FlashCards',
                 maxLines: 4,
@@ -82,7 +80,6 @@ class SlideZero extends ConsumerWidget {
                   fontSize: 30,
                 )),
               ),
-              const Spacer(),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 30),
                 child: AutoSizeText(
@@ -96,7 +93,6 @@ class SlideZero extends ConsumerWidget {
                   )),
                 ),
               ),
-              const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.center,

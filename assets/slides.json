@@ -5,7 +5,7 @@
 		{
 			"categoryName" : "DSGVO / GDPR",
 			"FlashCardMaker": "Chris Tighe - AT INTERNET",
-			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle: https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/",
+			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle:<link href='https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/'> blog.atinternet.com </link> ",
 			"slides": [
 				{
 					"First Side": "Was ist die <red>DSGVO?</red>",
@@ -110,8 +110,20 @@
 						"<red>Betroffene Person</red>\n\nEine natürliche Person, die direkt oder indirekt, insbesondere mittels Zuordnung zu einer Kennung wie einem Namen, einer Kennnummer usw., identifiziert werden kann.\n",
 						"<red>Personenbezogene Daten</red>\n\nAlle Auskünfte, die sich auf eine bestimmte oder bestimmbare natürliche Person („betroffene Person“) beziehen.\n",
 						"<red>Sensible Daten</red>\n\nPersonenbezogene Daten, aus denen die rassische und ethnische Herkunft, politische Meinungen, religiöse oder weltanschauliche Überzeugungen oder eine Gewerkschaftszugehörigkeit hervorgehen, sowie genetische Daten, biometrische Daten, Gesundheitsdaten oder Daten zum Sexualleben oder zur sexuellen Orientierung einer natürlichen Person. Auch als „besondere Kategorien personenbezogener Daten“ bezeichnet. Weitere Informationen\n"
+					],
+					"tags": [
+						{
+							"tag_name": "red",
+							"fontWeight": "bold",
+							"color" : "c16464"
+						},
+						{
+							"tag_name": "redthin",
+							"color" : "c16464"
+						}
 					]
 				},
+				
 				{
 					"title" : "Deck B:",
 					"list" :[

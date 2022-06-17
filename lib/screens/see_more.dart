@@ -21,11 +21,11 @@ class SeeMore extends ConsumerWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: AutoSizeText("Learn more...",
+          title: const AutoSizeText("Learn more...",
               maxLines: 1,
               style: TextStyle(
                   fontSize: 16,
-                  color: Theme.of(context).primaryColor,
+                  color: Colors.blue,
                   fontWeight: FontWeight.bold)),
           iconTheme: IconThemeData(
             color: Theme.of(context).primaryColor, //change your color here

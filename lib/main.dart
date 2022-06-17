@@ -43,12 +43,12 @@ class MyApp extends ConsumerWidget {
         home: SplashScreenView(
           navigateRoute: const MainScreen(),
           duration: 3000,
-          imageSize: 130,
+          imageSize: 200,
           imageSrc: "assets/images/view.png",
           text: "Accelerated Learning",
           textType: TextType.TyperAnimatedText,
           textStyle: const TextStyle(
-            fontSize: 30.0,
+            fontSize: 45.0,
           ),
           backgroundColor: Colors.white,
         ));

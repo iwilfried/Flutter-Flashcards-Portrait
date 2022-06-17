@@ -279,7 +279,8 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
             ),
             if (!isQuestion)
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 10.0, vertical: 40.0),
                 child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [

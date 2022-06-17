@@ -2,6 +2,8 @@ import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:styled_text/styled_text.dart';
+import 'package:url_launcher/url_launcher.dart';
 import '../models/category.dart';
 import '../state_managment/categories_state_manager.dart';
 import 'slides_screen.dart';
@@ -86,7 +88,7 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                         style: ElevatedButton.styleFrom(
                           primary: const Color(0xffF16623),
                           shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(1.0)),
+                              borderRadius: BorderRadius.circular(8.0)),
                           padding: const EdgeInsets.all(10.0),
                         ),
                         onPressed: () => Navigator.pushReplacement(
@@ -151,16 +153,30 @@ class _CategoriesScreenState extends ConsumerState<CategoriesScreen> {
                     width: width,
                     padding: const EdgeInsets.symmetric(
                         horizontal: 20, vertical: 15),
-                    child: Text(
-                      categories[index].explanation,
-                      textAlign: TextAlign.start,
+                    child: StyledText(
+                      textAlign: TextAlign.justify,
+                      text: categories[index].explanation,
                       style: GoogleFonts.roboto(
-                        textStyle: TextStyle(
-                          fontWeight: FontWeight.normal,
-                          color: Theme.of(context).primaryColor,
-                          fontSize: 15,
-                        ),
-                      ),
+                          textStyle: TextStyle(
+                        fontFamily: "RobotoSerif",
+                        fontWeight: FontWeight.normal,
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 15,
+                      )),
+                      tags: {
+                        "link": StyledTextActionTag(
+                          (String? text, Map<String?, String?> attrs) async {
+                            final String? link = attrs['href'];
+                            launch(link!);
+                          },
+                          style: GoogleFonts.roboto(
+                              textStyle: const TextStyle(
+                                  fontFamily: "RobotoSerif",
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 15,
+                                  color: Color(0xffc16464))),
+                        )
+                      },
                     ),
                   ),
                 ],
