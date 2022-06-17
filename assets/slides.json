@@ -42,18 +42,8 @@
 					{
 					"First Side": "Wer ist in erster Linie von der <red>DSGVO</red> betroffen?",
 					"Second Side": "EU-Bürger und alle Stellen, die ihre Daten verarbeiten.",
-					"Learn more": "Die betroffene Person ist definiert als eine <redthin>natürliche Person</redthin>, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. \n\nDer Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. \n\nDer Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. \n\nDer Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. \n\nDie DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. \n\nVerantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können.",
-					"tags": [
-						{
-							"tag_name": "red",
-							"fontWeight": "bold",
-							"color" : "c16464"
-						},
-						{
-							"tag_name": "redthin",
-							"color" : "c16464"
-						}
-					]
+					"Learn more": "Die betroffene Person ist definiert als eine <redthin>natürliche Person</redthin>, z.B. ein Bürger eines EU-Landes oder eines anderen Landes. \n\nDer Verantwortliche für die Datenverarbeitung (Controller) ist eine natürliche oder juristische Person. \n\nDer Verantwortliche für die Datenverarbeitung bestimmt die Zwecke und Bedingungen für die Verarbeitung personenbezogener Daten, z.B. gewinnorientierte und/oder gemeinnützige Unternehmen, Regierungen, staatliche Stellen und Personen. \n\nDer Datenverarbeiter (Processor) ist eine natürliche oder juristische Person, die personenbezogene Daten im Auftrag des Verantwortlichen verarbeitet, z.B. ein IT-Anbieter. \n\nDie DSGVO erlegt dem Verantwortlichen für die Datenverarbeitung, der letztlich für die rechtmäßige Verarbeitung personenbezogener Daten verantwortlich ist, verschiedene Pflichten auf. \n\nVerantwortliche dürfen nur Datenverarbeiter einsetzen, die die von der DSGVO vorgeschriebenen Anforderungen an eine rechtmäßige Verarbeitung personenbezogener Daten erfüllen können."
+					
 				},
 				{
 					"First Side": "Was wird in der DSGVO als rechtmäßige Einwilligung betrachtet?",
@@ -149,13 +139,13 @@
 				{
 					"First Side": "Weshalb ist Barrierefreiheit nötig?",
 					"Second Side": "Viele Benutzerinnen und Benutzer sind auf die individuelle Anpassbarkeit angewiesen, etwa die Schriftvergrösserung im Browser oder sie verwenden ein spezielles Ausgabegerät, beispielsweise das Bildschirmleseprogramm (Screen-Reader) eines Blinden.",
-					"Learn more": "Gerne vergessen gehen die zahlreichen Tastaturbediener, die also keine Maus nutzen. Das Spektrum der Menschen mit einer Behinderung reicht von altersbedingten Mobilitäts- und Seh-Einschränkungen über den motorisch eingeschränkten Tetraplegiker bis zum Blinden. Es gibt viele weiche und individuell geprägte Barrieren, vor denen die vielen Nutzergruppen stehen. <redthin>Gerade diesen Bevölkerungsteilen bietet sich mit den internetbasierten Kommunikations­technologien ein grosser Schritt zur Teilhabe an Information, an Bildung und Geselligkeit an.</redthin>",
+					"Learn more": "Gerne vergessen gehen die zahlreichen Tastaturbediener, die also keine Maus nutzen. Das Spektrum der Menschen mit einer Behinderung reicht von altersbedingten Mobilitäts- und Seh-Einschränkungen über den motorisch eingeschränkten Tetraplegiker bis zum Blinden. Es gibt viele weiche und individuell geprägte Barrieren, vor denen die vielen Nutzergruppen stehen. <redthin>Gerade diesen Bevölkerungsteilen bietet sich mit den internetbasierten Kommunikations­technologien ein grosser Schritt zur Teilhabe an Information, an Bildung und Geselligkeit an.</redthin>"
 					
 				},
 				{
 					"First Side": "Wer braucht Barrierefreiheit?",
 					"Second Side": "Durch eine körperliche, geistige oder psychische Behinderung kann die Nutzung des Internets erschwert oder verunmöglicht werden. Je nach Behinderung sind die Auswirkungen auf das Arbeiten am Computer und somit auch die Anforderungen unterschiedlich.",
-					"Learn more": "Behinderungskategorien und ihre Anforderungen im Hinblick auf die Internet-Nutzung: #Sehkraft, Blind \n\n#Sehkraft, Sehbehinderung (breites, wachsendes Spektrum) #Motorik und Mobilität #Kognition(Wahrnehmungsfähigkeit, geistige Behinderungen)(z.B. Para- und Tetraplegiker) #Hörkraft(Taube, Stumme und Taubstumme)"
+					"Learn more": "Behinderungskategorien und ihre Anforderungen im Hinblick auf die Internet-Nutzung: "
 					
 				},	
 				
