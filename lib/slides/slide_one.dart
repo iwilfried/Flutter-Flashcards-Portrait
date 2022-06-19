@@ -119,7 +119,7 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                     fontFamily: "RobotoSerif",
                     color: Theme.of(context).primaryColor,
                     fontWeight: FontWeight.w400,
-                    fontSize: 36,
+                    fontSize: height * 0.044,
                   ),
                   tags: tags,
                 )),
@@ -135,7 +135,6 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                     children: [
                       const Spacer(),
                       StyledText(
-                        textAlign: TextAlign.justify,
                         text: widget.slide.secondSide,
                         style: TextStyle(
                           fontFamily: "RobotoSerif",
