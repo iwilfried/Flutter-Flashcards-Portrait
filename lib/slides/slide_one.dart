@@ -119,7 +119,9 @@ class _SlideOneState extends ConsumerState<SlideOne> {
                     fontFamily: "RobotoSerif",
                     color: Theme.of(context).primaryColor,
                     fontWeight: FontWeight.w400,
-                    fontSize: height * 0.044,
+                    fontSize: (MediaQuery.of(context).size.longestSide /
+                            MediaQuery.of(context).size.shortestSide) *
+                        15,
                   ),
                   tags: tags,
                 )),
