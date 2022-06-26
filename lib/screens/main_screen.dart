@@ -102,11 +102,11 @@ class _MainScreenState extends ConsumerState<MainScreen> {
                     child: AutoSizeText(
                         page == 0 ? "Accelerated Learning" : "FlashDecks",
                         maxLines: 1,
-                        style: GoogleFonts.roboto(
-                            textStyle: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 24,
-                                fontWeight: FontWeight.w300))),
+                        style: TextStyle(
+                            color: Theme.of(context).primaryColor,
+                            fontFamily: "RobotoSerif",
+                            fontSize: 20,
+                            fontWeight: FontWeight.w300)),
                   )),
               Expanded(
                 flex: 1,

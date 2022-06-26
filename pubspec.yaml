@@ -54,6 +54,7 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.0
+  device_preview: ^1.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -105,14 +106,14 @@ splash_screen_view:
   # This is useful for gradients. The image will be stretch to the  size of the app.
   # Only one parameter can be used, color and background_image cannot both be set.
 
-  color: "#ffffff"
-  #background_image: "assets/splashscreen_image.png"
+  #color: "#ffffff"
+  background_image: "assets/images/backPortrait.png"
 
   # Optional parameters are listed below.
   #image: assets/splashscreen_image.png
 
   #color_dark: "#042a49"
-  #background_image_dark: "assets/dark-background.png"
+  background_image_dark: "assets/images/backPortrait.png"
   #image_dark: assets/splash-invert.png
 
   android: true

@@ -3,9 +3,6 @@ import "package:flutter/material.dart";
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:styled_text/styled_text.dart';
-import 'package:styled_text/tags/styled_text_tag.dart';
-import 'package:styled_text/tags/styled_text_tag_action.dart';
-import 'package:styled_text/tags/styled_text_tag_base.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../models/glossry.dart';
@@ -97,23 +94,24 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                 }).toList();
               },
             ),
+            const SizedBox(width: 16),
           ],
         ),
         body: Padding(
-            padding: const EdgeInsets.all(24),
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Padding(
                   padding:
-                      const EdgeInsets.symmetric(vertical: 30, horizontal: 10),
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                   child: Text(
                     "Glossary",
                     style: GoogleFonts.oswald(
                       textStyle: TextStyle(
                         fontWeight: FontWeight.bold,
                         color: Theme.of(context).primaryColor,
-                        fontSize: 30,
+                        fontSize: 27,
                       ),
                     ),
                   ),
@@ -125,7 +123,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                         return Card(
                           child: ExpansionTile(
                             key: GlobalKey(),
-                            tilePadding: const EdgeInsets.all(15),
+                            tilePadding: const EdgeInsets.all(10),
                             title: SizedBox(
                               width: MediaQuery.of(context).size.width,
                               child: Column(
@@ -137,7 +135,7 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                                     style: GoogleFonts.robotoCondensed(
                                       textStyle: TextStyle(
                                         color: Theme.of(context).primaryColor,
-                                        fontSize: 25,
+                                        fontSize: 20,
                                       ),
                                     ),
                                   ),
@@ -151,13 +149,13 @@ class _GlossariesScreenState extends ConsumerState<GlossariesScreen> {
                                 return Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: StyledText(
-                                    textAlign: TextAlign.center,
+                                    textAlign: TextAlign.left,
                                     text: widget.glossries[index].questions[i],
                                     style: GoogleFonts.robotoCondensed(
                                         textStyle: TextStyle(
                                       fontWeight: FontWeight.normal,
                                       color: Theme.of(context).primaryColor,
-                                      fontSize: 22,
+                                      fontSize: 18,
                                     )),
                                     tags: tags,
                                   ),

@@ -20,43 +20,52 @@ class SeeMore extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: const AutoSizeText("Learn more...",
-              maxLines: 1,
-              style: TextStyle(
-                  fontSize: 16,
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold)),
-          iconTheme: IconThemeData(
-            color: Theme.of(context).primaryColor, //change your color here
-          ),
+          centerTitle: false,
           shape: const Border(top: BorderSide(color: Colors.green, width: 3)),
           backgroundColor: Theme.of(context).cardColor,
           titleSpacing: 0,
           shadowColor: Theme.of(context).shadowColor,
-          actions: [
-            PopupMenuButton<String>(
-              child: Icon(
-                Icons.more_vert,
-                color: Theme.of(context).primaryColor,
-              ),
-              onSelected: (String value) => ref
-                  .read(darkModeStateManagerProvider.notifier)
-                  .switchDarkMode(),
-              itemBuilder: (BuildContext context) {
-                return {
-                  Theme.of(context).brightness == Brightness.light
-                      ? 'Dark mode'
-                      : 'Light mode'
-                }.map((String choice) {
-                  return PopupMenuItem<String>(
-                    value: choice,
-                    child: Text(choice),
-                  );
-                }).toList();
-              },
+          title: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Row(
+              children: [
+                const Spacer(flex: 2),
+                const AutoSizeText(
+                  "Learn more...",
+                  maxLines: 1,
+                  style: TextStyle(
+                      fontSize: 20,
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold),
+                ),
+                const Spacer(flex: 3),
+                PopupMenuButton<String>(
+                  child: Icon(
+                    Icons.more_vert,
+                    color: Theme.of(context).primaryColor,
+                  ),
+                  onSelected: (String value) => ref
+                      .read(darkModeStateManagerProvider.notifier)
+                      .switchDarkMode(),
+                  itemBuilder: (BuildContext context) {
+                    return {
+                      Theme.of(context).brightness == Brightness.light
+                          ? 'Dark mode'
+                          : 'Light mode'
+                    }.map((String choice) {
+                      return PopupMenuItem<String>(
+                        value: choice,
+                        child: Text(choice),
+                      );
+                    }).toList();
+                  },
+                ),
+              ],
             ),
-          ],
+          ),
+          iconTheme: IconThemeData(
+            color: Theme.of(context).primaryColor, //change your color here
+          ),
         ),
         body: Column(
           children: [
@@ -88,13 +97,11 @@ class SeeMore extends ConsumerWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(categoryName,
-                        style: GoogleFonts.robotoSlab(
-                          textStyle: GoogleFonts.robotoSlab(
-                              textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500)),
-                        )),
+                        style: const TextStyle(
+                            fontFamily: "RobotoSerif",
+                            color: Colors.white,
+                            fontSize: 14,
+                            fontWeight: FontWeight.w500)),
                   ]),
             ),
           ],

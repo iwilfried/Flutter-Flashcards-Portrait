@@ -290,8 +290,8 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                           shape: RoundedRectangleBorder(
                               side: const BorderSide(
                                   color: Colors.green, width: 0.5),
-                              borderRadius: BorderRadius.circular(3.0)),
-                          padding: const EdgeInsets.all(15.0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          padding: const EdgeInsets.all(10.0),
                         ),
                         onPressed: () {
                           ref
@@ -324,8 +324,8 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                           shape: RoundedRectangleBorder(
                               side: const BorderSide(
                                   color: Colors.red, width: 0.5),
-                              borderRadius: BorderRadius.circular(3.0)),
-                          padding: const EdgeInsets.all(15.0),
+                              borderRadius: BorderRadius.circular(10.0)),
+                          padding: const EdgeInsets.all(10.0),
                         ),
                         onPressed: () {
                           ref
@@ -431,7 +431,7 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                               fontWeight: FontWeight.w500)),
                     )),
                 const Spacer(),
-                Text(isQuestion ? "Question" : "Answer",
+                Text(isQuestion ? "QUESTION" : "ANSWER",
                     style: GoogleFonts.robotoSlab(
                       textStyle: GoogleFonts.robotoSlab(
                           textStyle: const TextStyle(
