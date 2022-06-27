@@ -77,96 +77,100 @@ class _SlideOneState extends ConsumerState<SlideOne> {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        margin: const EdgeInsets.only(
-            left: 32.0, right: 32.0, top: 0.0, bottom: 0.0),
-        color: Colors.transparent,
-        child: FlipCard(
-          controller: widget.controller,
-          direction: FlipDirection.VERTICAL,
-          speed: 1000,
-          onFlip: () async {
-            await Future.delayed(const Duration(milliseconds: 500));
-            widget.flip();
-          },
-          onFlipDone: (status) {
-            widget.flip(status: !status);
-          },
-          front: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            decoration: const BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-            ),
-            child: Center(
-                child: StyledText(
-              textAlign: TextAlign.center,
-              text: widget.slide.firstSide,
-              style: TextStyle(
-                fontFamily: "RobotoSerif",
-                color: Theme.of(context).primaryColor,
-                fontWeight: FontWeight.w400,
-                fontSize: (MediaQuery.of(context).size.longestSide /
-                        MediaQuery.of(context).size.shortestSide) *
-                    15,
-              ),
-              tags: tags,
-            )),
-          ),
-          back: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            decoration: const BoxDecoration(
-              color: Colors.transparent,
-              borderRadius: BorderRadius.all(Radius.circular(8.0)),
-            ),
-            child: Center(
-              child: Column(
-                children: [
-                  const Spacer(),
-                  StyledText(
-                    text: widget.slide.secondSide,
-                    style: TextStyle(
-                      fontFamily: "RobotoSerif",
-                      color: Theme.of(context).primaryColor,
-                      fontWeight: FontWeight.w400,
-                      fontSize: 19,
-                      height: 1.7,
-                    ),
-                    tags: tags,
+    return Column(
+      children: [
+        Expanded(
+          child: Container(
+            margin: const EdgeInsets.only(
+                left: 32.0, right: 32.0, top: 0.0, bottom: 0.0),
+            color: Colors.transparent,
+            child: FlipCard(
+              controller: widget.controller,
+              direction: FlipDirection.VERTICAL,
+              speed: 1000,
+              onFlip: () async {
+                await Future.delayed(const Duration(milliseconds: 500));
+                widget.flip();
+              },
+              onFlipDone: (status) {
+                widget.flip(status: !status);
+              },
+              front: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 15),
+                decoration: const BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
+                child: Center(
+                    child: StyledText(
+                  textAlign: TextAlign.center,
+                  text: widget.slide.firstSide,
+                  style: TextStyle(
+                    fontFamily: "RobotoSerif",
+                    color: Theme.of(context).primaryColor,
+                    fontWeight: FontWeight.w400,
+                    fontSize: (MediaQuery.of(context).size.longestSide /
+                            MediaQuery.of(context).size.shortestSide) *
+                        15,
                   ),
-                  const Spacer(),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
+                  tags: tags,
+                )),
+              ),
+              back: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                decoration: const BoxDecoration(
+                  color: Colors.transparent,
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                ),
+                child: Center(
+                  child: Column(
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          text: "Learn more...",
-                          style: GoogleFonts.robotoCondensed(
-                              textStyle: const TextStyle(
-                            height: 1.7,
-                            color: Colors.blue,
-                            fontSize: 19,
-                          )),
-                          recognizer: TapGestureRecognizer()
-                            ..onTap = () => Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => SeeMore(
-                                          categoryName: widget.categoryName,
-                                          tags: tags,
-                                          text: widget.slide.learnMore)),
-                                ),
+                      const Spacer(),
+                      StyledText(
+                        text: widget.slide.secondSide,
+                        style: TextStyle(
+                          fontFamily: "RobotoSerif",
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 19,
+                          height: 1.7,
                         ),
+                        tags: tags,
+                      ),
+                      const Spacer(),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          RichText(
+                            text: TextSpan(
+                              text: "Learn more...",
+                              style: GoogleFonts.robotoCondensed(
+                                  textStyle: const TextStyle(
+                                height: 1.7,
+                                color: Colors.blue,
+                                fontSize: 19,
+                              )),
+                              recognizer: TapGestureRecognizer()
+                                ..onTap = () => Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => SeeMore(
+                                              categoryName: widget.categoryName,
+                                              tags: tags,
+                                              text: widget.slide.learnMore)),
+                                    ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ],
+                ),
               ),
             ),
           ),
         ),
-      ),
+      ],
     );
   }
 }
