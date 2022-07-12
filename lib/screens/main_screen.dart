@@ -15,20 +15,21 @@ import '../state_managment/dark_mode_state_manager.dart';
 import 'Impressum.dart';
 
 class MainScreen extends ConsumerStatefulWidget {
-  const MainScreen({Key? key}) : super(key: key);
+  final int initPage;
+  const MainScreen({Key? key, this.initPage = 0}) : super(key: key);
 
   @override
   ConsumerState<MainScreen> createState() => _MainScreenState();
 }
 
 class _MainScreenState extends ConsumerState<MainScreen> {
-  int page = 0;
+  late int page;
   List<Widget> list = [];
   List<Category> categories = [];
   String title = "";
   String lesson = "";
 
-  PageController pageControllerH = PageController();
+  late PageController pageControllerH;
 
   void startLesson() {
     pageControllerH.nextPage(
@@ -63,11 +64,13 @@ class _MainScreenState extends ConsumerState<MainScreen> {
       DeviceOrientation.portraitDown,
     ]);
     setState(() {
+      page = widget.initPage;
       list = [
         SlideZero(startLesson, title),
         CategoriesScreen(title: title, lesson: lesson),
       ];
     });
+    pageControllerH = PageController(initialPage: page);
   }
 
   @override

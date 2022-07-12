@@ -191,7 +191,9 @@ class _MainScreenState extends ConsumerState<SlidesScreen> {
                           ? Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => const MainScreen()),
+                                  builder: (context) => const MainScreen(
+                                        initPage: 1,
+                                      )),
                             )
                           : value == 'Impressum'
                               ? Navigator.push(

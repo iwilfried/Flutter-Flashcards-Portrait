@@ -67,44 +67,70 @@ class SeeMore extends ConsumerWidget {
             color: Theme.of(context).primaryColor, //change your color here
           ),
         ),
-        body: Column(
-          children: [
-            Expanded(
-              child: SingleChildScrollView(
-                child: Padding(
-                    padding: const EdgeInsets.all(15.0),
-                    child: StyledText(
-                      text: text,
-                      style: GoogleFonts.robotoCondensed(
-                        textStyle: TextStyle(
-                          color: Theme.of(context).primaryColor,
-                          fontWeight: FontWeight.w400,
-                          fontSize: 19,
-                          height: 1.7,
-                        ),
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 24),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                Padding(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                  child: Text(
+                    "DSGVO",
+                    textAlign: TextAlign.left,
+                    style: GoogleFonts.oswald(
+                      textStyle: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).primaryColor,
+                        fontSize: 27,
                       ),
-                      tags: tags,
-                    )),
-              ),
+                    ),
+                  ),
+                ),
+                Card(
+                  child: ExpansionTile(
+                    key: GlobalKey(),
+                    tilePadding: const EdgeInsets.all(10),
+                    title: SizedBox(
+                      width: MediaQuery.of(context).size.width,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AutoSizeText(
+                            categoryName,
+                            maxLines: 1,
+                            style: GoogleFonts.robotoCondensed(
+                              textStyle: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    children: [
+                      Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: StyledText(
+                            text: text,
+                            style: GoogleFonts.robotoCondensed(
+                              textStyle: TextStyle(
+                                color: Theme.of(context).primaryColor,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 19,
+                                height: 1.7,
+                              ),
+                            ),
+                            tags: tags,
+                          )),
+                    ],
+                  ),
+                ),
+              ],
             ),
-            Container(
-              padding: const EdgeInsets.only(left: 20, right: 12),
-              color: Colors.blue,
-              width: double.infinity,
-              height: 45,
-              child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(categoryName,
-                        style: const TextStyle(
-                            fontFamily: "RobotoSerif",
-                            color: Colors.white,
-                            fontSize: 14,
-                            fontWeight: FontWeight.w500)),
-                  ]),
-            ),
-          ],
+          ),
         ));
   }
 }
