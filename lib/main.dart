@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,10 +9,10 @@ import 'state_managment/dark_mode_state_manager.dart';
 import 'screens/main_screen.dart';
 
 void main() {
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(
     const ProviderScope(child: MyApp()),
   );
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 }
 
 class MyApp extends ConsumerWidget {
@@ -49,22 +50,47 @@ class MyApp extends ConsumerWidget {
               height: 100,
             ),
             const SizedBox(
-              height: 40,
+              height: 60,
             ),
-            Text("Accelerated Learning",
-                style: GoogleFonts.robotoMono(
-                  textStyle: const TextStyle(
-                    fontSize: 20,
-                  ),
-                )),
+            DefaultTextStyle(
+              textAlign: TextAlign.center,
+              style: GoogleFonts.robotoMono(
+                color: Colors.black,
+                textStyle: const TextStyle(
+                  fontSize: 28,
+                ),
+              ),
+              child: AnimatedTextKit(
+                isRepeatingAnimation: false,
+                animatedTexts: [
+                  TypewriterAnimatedText('Accelerated Learning',
+                      textAlign: TextAlign.center,
+                      speed: const Duration(milliseconds: 100),
+                      cursor: ""),
+                ],
+              ),
+            ),
             const SizedBox(
               height: 100,
             ),
-            Text(
-              "Flash Cards",
+            DefaultTextStyle(
+              textAlign: TextAlign.center,
               style: GoogleFonts.robotoCondensed(
-                  textStyle: const TextStyle(
-                      fontWeight: FontWeight.w500, fontSize: 32)),
+                color: Colors.black,
+                textStyle:
+                    const TextStyle(fontWeight: FontWeight.w600, fontSize: 38),
+              ),
+              child: AnimatedTextKit(
+                isRepeatingAnimation: false,
+                animatedTexts: [
+                  TypewriterAnimatedText("",
+                      speed: const Duration(milliseconds: 110), cursor: ""),
+                  TypewriterAnimatedText('FlashCards',
+                      textAlign: TextAlign.center,
+                      speed: const Duration(milliseconds: 100),
+                      cursor: ""),
+                ],
+              ),
             ),
           ],
         ),
@@ -77,25 +103,8 @@ class MyApp extends ConsumerWidget {
           BlendMode.darken,
         ),
         home: const MainScreen(),
-        seconds: 3,
+        seconds: 4,
       ),
-
-      // SplashScreenView(
-      //   navigateRoute:
-      //   duration: 5000,
-      //   imageSize: 130,
-      //   imageSrc: "assets/images/view.png",
-      //   text: "Accelerated Learning \n \n Flash Cards",
-      //   textType: TextType.TyperAnimatedText,
-      //   textStyle: GoogleFonts.robotoSlab(
-      //     textStyle: GoogleFonts.robotoSlab(
-      //         textStyle: const TextStyle(
-      //             color: Colors.blue,
-      //             fontWeight: FontWeight.w500,
-      //             fontSize: 50)),
-      //   ),
-      //   // backgroundColor: Colors.white,
-      // ),
     );
   }
 }

@@ -77,7 +77,7 @@ class SeeMore extends ConsumerWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
                   child: Text(
-                    "DSGVO",
+                    categoryName,
                     textAlign: TextAlign.left,
                     style: GoogleFonts.oswald(
                       textStyle: TextStyle(
@@ -89,43 +89,20 @@ class SeeMore extends ConsumerWidget {
                   ),
                 ),
                 Card(
-                  child: ExpansionTile(
-                    key: GlobalKey(),
-                    tilePadding: const EdgeInsets.all(10),
-                    title: SizedBox(
-                      width: MediaQuery.of(context).size.width,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          AutoSizeText(
-                            categoryName,
-                            maxLines: 1,
-                            style: GoogleFonts.robotoCondensed(
-                              textStyle: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ),
-                        ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(15.0),
+                    child: StyledText(
+                      text: text,
+                      style: GoogleFonts.robotoCondensed(
+                        textStyle: TextStyle(
+                          color: Theme.of(context).primaryColor,
+                          fontWeight: FontWeight.w400,
+                          fontSize: 19,
+                          height: 1.7,
+                        ),
                       ),
+                      tags: tags,
                     ),
-                    children: [
-                      Padding(
-                          padding: const EdgeInsets.all(15.0),
-                          child: StyledText(
-                            text: text,
-                            style: GoogleFonts.robotoCondensed(
-                              textStyle: TextStyle(
-                                color: Theme.of(context).primaryColor,
-                                fontWeight: FontWeight.w400,
-                                fontSize: 19,
-                                height: 1.7,
-                              ),
-                            ),
-                            tags: tags,
-                          )),
-                    ],
                   ),
                 ),
               ],

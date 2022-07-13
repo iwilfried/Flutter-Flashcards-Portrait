@@ -43,6 +43,7 @@ dependencies:
   url_launcher: ^6.0.20
   equatable: ^2.0.3
   splash_view: ^1.0.0
+  animated_text_kit: ^4.2.2
   
 dev_dependencies:
   flutter_test:
