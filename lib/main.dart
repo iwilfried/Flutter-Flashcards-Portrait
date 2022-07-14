@@ -1,9 +1,9 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_flashcards_portrait/screens/splash_screen.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:splash_view/splash_view.dart';
 
 import 'state_managment/dark_mode_state_manager.dart';
 import 'screens/main_screen.dart';
@@ -85,7 +85,7 @@ class MyApp extends ConsumerWidget {
                 animatedTexts: [
                   TypewriterAnimatedText("",
                       speed: const Duration(milliseconds: 110), cursor: ""),
-                  TypewriterAnimatedText('FlashCards',
+                  TypewriterAnimatedText('Flashcards',
                       textAlign: TextAlign.center,
                       speed: const Duration(milliseconds: 100),
                       cursor: ""),
