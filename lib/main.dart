@@ -9,10 +9,10 @@ import 'state_managment/dark_mode_state_manager.dart';
 import 'screens/main_screen.dart';
 
 void main() {
-  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
   runApp(
     const ProviderScope(child: MyApp()),
   );
+  SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
 }
 
 class MyApp extends ConsumerWidget {
