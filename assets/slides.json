@@ -8,7 +8,7 @@
 			"explanation" : "Fragen und Antworten zum Schutz von personenbezogenen Daten - DSGVO - Datenschutz und Privatsphäre. Seit dem 25. Mai 2018 gilt die DSGVO in allen EU-Mitgliedsstaaten und für alle Unternehmen, die personenbezogene Daten von europäischen Bürgern verarbeiten.  \n\nQuelle:<link href='https://blog.atinternet.com/de/quiz-15-fragen-zu-ihrem-dsgvo-wissen/'> blog.atinternet.com </link> ",
 			"slides": [
 				{
-					"First Side": "Was ist die <red>DSGVO?</red>",
+					"First Side": "Was ist die <br><red>DSGVO?</red>",
 					"Second Side": "<boldtxt>Verordnung der Europäischen Union</boldtxt>, die den Umgang mit personenbezogenen Daten und Informationen standardisiert, insbesondere <redthin>Sicherheit und Schutz von personenbezogenen Daten</redthin>.",
 					"Learn more": "Mit Wirkung zum <boldtxt>25. Mai 2018</boldtxt> ist die Datenschutzgrundverordnung (DSGVO) eine Verordnung im EU-Recht zum Datenschutz und zur Wahrung der Privatsphäre für alle Personen innerhalb der Europäischen Union (EU) und des Europäischen Wirtschaftsraums (EWR). \n\nEs geht auch um den Export und Transfer personenbezogener Daten <boldtxt>außerhalb</boldtxt> der EU und EWR-Gebiete. \n\nIn einer zunehmend datengestützten Welt zielt die DSGVO in erster Linie darauf ab, Einzelpersonen die Kontrolle über ihre personenbezogenen Daten zu geben und das regulatorische Umfeld für internationale Unternehmen zu vereinfachen, indem sie die <boldtxt>Regulierung innerhalb der EU vereinheitlicht</boldtxt>.\n\nSeit ihrer Umsetzung ist die <redthin>DSGVO weltweit zu einem Standard</redthin> geworden.",
 					"tags": [
